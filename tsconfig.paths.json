@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/api/*": ["pages/api/*"],
+      "@/pages/*": ["pages/*"],
+      "@/modules/*": ["modules/*"],
+      "@/common/*": ["common/*"],
+      "@/styles/*": ["common/styles/*"],
+      "@/client/*": ["common/client/*"],
+      "@/config/*": ["common/config/*"],
+      "@/utils/*": ["common/utils/*"],
+      "@/ui/*": ["common/ui/*"],
+      "@/images/*": ["common/images/*"],
+      "@/middlewares/*": ["common/middlewares/*"],
+      "@/redux/*": ["common/redux/*"],
+      "@/services/*": ["common/services/*"]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "orders",
+    "name": "Заявки",
+    "urlPath": "/admin/orders",
+    "iconPath": "/svg/order.svg"
+  },
+  {
+    "title": "hotel",
+    "name": "Услуги и отель",
+    "urlPath": "/admin/hotel",
+    "iconPath": "/svg/hotel&services.svg"
+  },
+  {
+    "title": "staff",
+    "name": "Сотрудники",
+    "urlPath": "/admin/staff",
+    "iconPath": "/svg/staff.svg"
+  },
+  {
+    "title": "stats",
+    "name": "Статистика",
+    "urlPath": "/admin/stats",
+    "iconPath": "/svg/statistics.svg"
+  }
+]

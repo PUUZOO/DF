@@ -1,0 +1,8 @@
+@import "@/styles/old-variables.scss";
+
+.container {
+  background: $sidebar-bg-color;
+  display: flex;
+  height: 100vh;
+  flex-direction: row-reverse;
+}
