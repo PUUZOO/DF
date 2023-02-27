@@ -1,0 +1,35 @@
+// {
+//   "extends": ["next/core-web-vitals", "airbnb-base"],
+//   "rules": {
+//     "semi": ["error", "never"],
+//     "import/extensions": [
+//       "error",
+//       "ignorePackages",
+//       {
+//         "js": "never",
+//         "jsx": "never",
+//         "ts": "never",
+//         "tsx": "never"
+//       }
+//     ],
+//     "no-shadow": "off",
+//     "@typescript-eslint/no-shadow": ["error"]
+//   }
+// }
+{
+  "extends": ["eslint:recommended", "next", "prettier"],
+  "plugins": ["react-hooks"],
+  "ignorePatterns": ["next.config.js"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+    "react-hooks/exhaustive-deps": "off", // Проверяем зависимости эффекта
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-case-declarations": "off",
+    "no-prototype-builtins": "warn",
+    "react/display-name": "off",
+    "import/no-anonymous-default-export": "off",
+    "no-restricted-imports": "off"
+  }
+}
