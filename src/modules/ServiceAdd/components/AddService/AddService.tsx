@@ -3,16 +3,20 @@ import { useHotel } from "@/common/hook/useHotel";
 import InputFile from "@/common/ui/InputFile";
 import iconFolder from "@/images/icon-folder.svg";
 import Input from "@/common/ui/Input";
+import ServiceList from "./ServiceList";
+import { RoomServicesTypes } from "@/common/fetchClient";
+import { useState } from "react";
 
 const AddService = () => {
-  const { roomServices } = useHotel();
+  const [active, setActive] = useState<RoomServicesTypes>(RoomServicesTypes.ORDER_FOOD);
 
   return (
     <div className='h-100 d-flex flex-column align-items-center justify-content-center'>
       <MainFrameStyled>
         <h2 className='mb-11'>Новая услуга</h2>
+        <ServiceList setActive={setActive} />
+        //Add active condition to render right component
         <Input as='textarea' placeholder='Описание (необязательно)' />
-
         <h5 className='text-secondary mb-7 mt-11'>Прайс-лист</h5>
         <InputFile onUpload={() => console.log("upload")}>
           <img src={iconFolder.src} alt='Добавить фото' />
