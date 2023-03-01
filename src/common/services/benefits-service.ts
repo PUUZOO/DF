@@ -1,4 +1,4 @@
-import { HotelBenefitsLink } from "../fetchClient";
+import { HotelBenefitsLink } from "@/common/types/SwaggerTypes";
 import { nextApiConnection } from "../http";
 
 export const benefitsService = {

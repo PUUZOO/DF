@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { AdminTypes } from "@/common/fetchClient";
+import { AdminTypes } from "@/common/types/SwaggerTypes";
 import styled from "styled-components";
 
 type Props = {

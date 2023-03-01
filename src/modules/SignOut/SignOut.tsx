@@ -10,7 +10,9 @@ import SchemaValidation from "./validation/index";
 import { createNextApiConnection } from "@/common/http/axiosConnection";
 import InputPassword from "@/common/ui/InputPassword";
 
-export interface SignOutProps {}
+export interface SignOutProps {
+  tempToken: string | undefined;
+}
 
 interface Values {
   password: string;
@@ -20,8 +22,8 @@ const initialValues: Values = {
   password: "",
 };
 
-const SignOut: FC<SignOutProps> = () => {
-  const { query, push } = useRouter();
+const SignOut: FC<SignOutProps> = ({ tempToken }) => {
+  const { push } = useRouter();
 
   return (
     <div className='h-100 d-flex flex-column justify-content-between'>
@@ -39,7 +41,7 @@ const SignOut: FC<SignOutProps> = () => {
           onSubmit={async (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
             const result = await createNextApiConnection().post("/register", {
               password: values.password,
-              token: query.token,
+              token: tempToken,
             });
 
             if (result.data.isLogin) {
@@ -67,9 +69,7 @@ const SignOut: FC<SignOutProps> = () => {
                     }}
                     isInvalid={touched[field.name] && !!errors[field.name]}
                     isValid={touched[field.name] && !errors[field.name]}
-                    // TODO разобраться и убрать ts-ignore
-                    // @ts-ignore
-                    error={errors[field.name]}
+                    error={errors[field.name]?.toString()}
                   />
                 )}
               </Field>

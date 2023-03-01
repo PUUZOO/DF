@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { useHotel } from "@/common/hook/useHotel";
 import InputFile from "@/common/ui/InputFile";
@@ -5,7 +6,7 @@ import iconFolder from "@/images/icon-folder.svg";
 import Input from "@/common/ui/Input";
 import ServiceList from "./ServiceList";
 import { RoomServicesTypes } from "@/common/fetchClient";
-import { useState } from "react";
+import ServiceSelection from "../ServiceSelection";
 
 const AddService = () => {
   const [active, setActive] = useState<RoomServicesTypes>(RoomServicesTypes.ORDER_FOOD);
@@ -30,8 +31,10 @@ const AddService = () => {
             }}
           >
             Перетащите таблицу xls в поле или загрузите с компьютера
+
           </div>
-        </InputFile>
+        )}
+        <ServiceSelection type={activeType} />
       </MainFrameStyled>
     </div>
   );

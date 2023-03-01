@@ -5,7 +5,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Button from "../Button";
 
-type Props = { className?: string; label?: string; error?: string } & FormControlProps;
+type Props = FormControlProps & { className?: string; label?: string; error?: string };
 
 const InputPassword: FC<Props> = ({ className, label, error, ...props }) => {
   const [isPassword, setIsPassword] = useState<boolean>(true);
@@ -14,7 +14,7 @@ const InputPassword: FC<Props> = ({ className, label, error, ...props }) => {
     <InputGroup hasValidation className={classNames(className)}>
       {label && <Form.Label>{label}</Form.Label>}
       <Form.Control {...props} type={isPassword ? "password" : "text"} />
-      <Button variant='outline-light'  onClick={() => setIsPassword(!isPassword)}>
+      <Button variant='outline-light' onClick={() => setIsPassword(!isPassword)}>
         <Image
           src={isPassword ? "/svg/closed_eye.svg" : "/svg/eye.svg"}
           width={24}

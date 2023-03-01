@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { decodeJwt } from "jose";
-import { TokenService } from "@/common/fetchClient";
+import { TokenService } from "@/common/types/SwaggerTypes";
 
 const noToken = [
   "/api/v1/token/administrative/exchange",

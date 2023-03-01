@@ -10,7 +10,7 @@ import tabs from "@/common/config/druffler-nav-tabs";
 import clsx from "clsx";
 import styled from "styled-components";
 import Select from "@/common/ui/Select";
-import { AccountsListResponse, HotelResponse } from "@/common/fetchClient";
+import { AccountsListResponse, HotelResponse } from "@/common/types/SwaggerTypes";
 import useSWR from "swr";
 import { setAccountId, setHotelId, selectDynamic } from "@/common/redux/reducers/dynamic";
 import { accountsService } from "@/common/services/accounts-service";

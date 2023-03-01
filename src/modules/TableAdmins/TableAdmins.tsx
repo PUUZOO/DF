@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NextPageWithLayout } from "@/pages/_app";
 import Table from "@/ui/Table";
-import { AdminFullListResponse, AdminFullResponse } from "@/common/fetchClient";
+import { AdminFullListResponse, AdminFullResponse } from "@/common/types/SwaggerTypes";
 import EmptyTable from "@/common/components/EmptyTable";
 import Button from "@/common/ui/Button";
 import Offcanvas from "@/common/ui/Offcanvas";
@@ -61,7 +61,7 @@ const TableAdmins: NextPageWithLayout = () => {
             id: "fullName",
             header: "Имя",
           }),
-          columnHelper.accessor((row) => row.info.email, {
+          columnHelper.accessor((row) => row.username, {
             id: "email",
             header: "Эл. почта",
           }),

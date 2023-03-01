@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames";
 import styled from "styled-components";
-import { HotelBenefitsResponse } from "@/common/fetchClient";
+import { HotelBenefitsResponse } from "@/common/types/SwaggerTypes";
 
 type Props = HotelBenefitsResponse & {
   className?: string;

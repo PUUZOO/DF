@@ -1,4 +1,4 @@
-import { HotelContactsUpdateRequest } from "../fetchClient";
+import { HotelContactsUpdateRequest } from "@/common/types/SwaggerTypes";
 import { nextApiConnection } from "../http";
 
 export const contactsService = {

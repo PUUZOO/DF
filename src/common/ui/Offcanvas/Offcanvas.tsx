@@ -1,19 +1,20 @@
 import OffcanvasBS from "react-bootstrap/Offcanvas";
 import { FC, ReactNode } from "react";
-import styled from "styled-components";
 
 type Props = {
   show: boolean;
   title: string;
   setHide: () => void;
+  headerLeft?: ReactNode;
   children?: ReactNode;
 };
 
-const Offcanvas: FC<Props> = ({ show, title, setHide, children }) => {
+const Offcanvas: FC<Props> = ({ show, title, setHide, headerLeft, children }) => {
   return (
     <OffcanvasBS show={show} onHide={setHide} placement='end'>
       <OffcanvasBS.Header closeButton>
-        <OffcanvasBS.Title>
+        <OffcanvasBS.Title style={{ display: "flex" }}>
+          {headerLeft}
           <h2>{title}</h2>
         </OffcanvasBS.Title>
       </OffcanvasBS.Header>

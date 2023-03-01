@@ -1,14 +1,24 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
+import axios, { AxiosResponse } from "axios";
 import jwt from "jsonwebtoken";
-import { AdminsService } from "@/common/fetchClient";
 import { withIronSessionApiRoute } from "@/common/middlewares/iron-session";
-import { apiConnection } from "@/common/http";
 import { errorsService } from "@/common/services/errors-service";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const response = await apiConnection(req, res).post("/admins/pwd", req.body);
+    const token = req.body.token;
+    console.log("token -> ", token);
+    const response = await axios.post(
+      process.env.NEXT_PUBLIC_HOST_DRUFFLE_API + "/api/v1/admins/pwd",
+      { password: req.body.password },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    );
+
+    console.log({ Authorization: `Bearer ${token}` });
+
+    console.log(response);
 
     if (response.status === 200) {
       const payload = jwt.decode(response.data.access_token as string) as TokenPayloadType;

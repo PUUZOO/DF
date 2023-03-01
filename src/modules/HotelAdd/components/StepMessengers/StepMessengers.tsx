@@ -5,16 +5,12 @@ import { FC } from "react";
 import styled from "styled-components";
 import { contactsService } from "@/common/services/contacts-service";
 import { messengersService } from "@/common/services/messengers-service";
-import { useAppSelector } from "@/redux/hooks";
-import { selectDynamic } from "@/common/redux/reducers/dynamic";
 import { toast } from "react-toastify";
 import { InitialAllDataType } from "../../HotelAdd";
 import Button from "@/common/ui/Button";
-import { useRouter } from "next/router";
-import { HotelMessengersResponse, ContactTypes } from "@/common/client";
+import { HotelMessengersResponse, ContactTypes } from "@/common/types/SwaggerTypes";
 import useSWR from "swr";
-import { useHotel } from "@/common/hook/useHotel";
-import { HotelContactsResponse } from "@/common/fetchClient";
+import { HotelContactsResponse } from "@/common/types/SwaggerTypes";
 
 interface Values {
   contact_type: ContactTypes;

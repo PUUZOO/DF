@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useHotel } from "@/common/hook/useHotel";
 import Image from "next/image";
 import styled from "styled-components";
-import { HotelAccommodations, HotelAddressResponse } from "@/common/fetchClient";
+import { HotelAccommodations, HotelAddressResponse } from "@/common/types/SwaggerTypes";
 
 const HotelPreview: FC = () => {
   const { full: hotel, images } = useHotel();

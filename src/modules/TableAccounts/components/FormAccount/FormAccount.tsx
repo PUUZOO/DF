@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { Formik, Field, Form, FormikHelpers, FieldProps } from "formik";
-import { AccountResponse } from "@/common/client";
+import { AccountResponse } from "@/common/types/SwaggerTypes";
 
 import Input from "@/common/ui/Input";
 import Button from "@/common/ui/Button";
