@@ -6,7 +6,7 @@ import Button from "@/common/ui/Button";
 import InputFile from "@/common/ui/InputFile";
 import cameraIcon from "@/images/camera.svg";
 import { hotelsPhotosService } from "@/common/services/hotels-photos-service";
-import { HotelPhotosResponse } from "@/common/fetchClient";
+import { HotelPhotosResponse } from "@/common/types/SwaggerTypes";
 import Image from "next/image";
 import { useHotel } from "@/common/hook/useHotel";
 

@@ -2,17 +2,13 @@ import { Formik, Field, Form, FormikHelpers, FieldProps } from "formik";
 import SchemaValidation from "./validation/index";
 import { FC } from "react";
 import styled from "styled-components";
-import Link from "next/link";
-import { useAppSelector } from "@/redux/hooks";
-import { selectDynamic } from "@/common/redux/reducers/dynamic";
 import { toast } from "react-toastify";
 import { InitialAllDataType } from "../../HotelAdd";
 import Button from "@/common/ui/Button";
-import { useRouter } from "next/router";
-import DatePicker from "react-datepicker";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import moment from "moment";
 import { hotelsAccommodationsService } from "@/common/services/hotels-accommodations-service";
+import TimePicker from "@/common/ui/TimePicker";
 
 interface Values {
   check_in: number;
@@ -114,19 +110,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                       field, // { name, value, onChange, onBlur }
                       form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                     }: FieldProps) => (
-                      <DatePicker
-                        selected={field.value}
-                        onChange={(date) => setFieldValue(field.name, date)}
-                        showTimeSelect
-                        showTimeSelectOnly
-                        timeIntervals={15}
-                        timeCaption=''
-                        dateFormat='HH:mm'
-                        timeFormat='HH:mm'
-                        className='form-control'
-                        timeClassName={(time) => {
-                          return "form-control";
-                        }}
+                      <TimePicker
+                        value={field.value}
+                        setFieldValue={(date) => setFieldValue(field.name, date)}
                       />
                     )}
                   </Field>
@@ -137,16 +123,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                       field, // { name, value, onChange, onBlur }
                       form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                     }: FieldProps) => (
-                      <DatePicker
-                        selected={field.value}
-                        onChange={(date) => setFieldValue(field.name, date)}
-                        showTimeSelect
-                        showTimeSelectOnly
-                        timeIntervals={15}
-                        timeCaption='Time'
-                        dateFormat='HH:mm'
-                        timeFormat='HH:mm'
-                        className='form-control'
+                      <TimePicker
+                        value={field.value}
+                        setFieldValue={(date) => setFieldValue(field.name, date)}
                       />
                     )}
                   </Field>
@@ -165,16 +144,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                       field, // { name, value, onChange, onBlur }
                       form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                     }: FieldProps) => (
-                      <DatePicker
-                        selected={field.value}
-                        onChange={(date) => setFieldValue(field.name, date)}
-                        showTimeSelect
-                        showTimeSelectOnly
-                        timeIntervals={15}
-                        timeCaption='Time'
-                        dateFormat='HH:mm'
-                        timeFormat='HH:mm'
-                        className='form-control'
+                      <TimePicker
+                        value={field.value}
+                        setFieldValue={(date) => setFieldValue(field.name, date)}
                       />
                     )}
                   </Field>
@@ -185,16 +157,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                       field, // { name, value, onChange, onBlur }
                       form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                     }: FieldProps) => (
-                      <DatePicker
-                        selected={field.value}
-                        onChange={(date) => setFieldValue(field.name, date)}
-                        showTimeSelect
-                        showTimeSelectOnly
-                        timeIntervals={15}
-                        timeCaption='Time'
-                        dateFormat='HH:mm'
-                        timeFormat='HH:mm'
-                        className='form-control'
+                      <TimePicker
+                        value={field.value}
+                        setFieldValue={(date) => setFieldValue(field.name, date)}
                       />
                     )}
                   </Field>
@@ -208,16 +173,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                           field, // { name, value, onChange, onBlur }
                           form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                         }: FieldProps) => (
-                          <DatePicker
-                            selected={field.value}
-                            onChange={(date) => setFieldValue(field.name, date)}
-                            showTimeSelect
-                            showTimeSelectOnly
-                            timeIntervals={15}
-                            timeCaption='Time'
-                            dateFormat='HH:mm'
-                            timeFormat='HH:mm'
-                            className='form-control'
+                          <TimePicker
+                            value={field.value}
+                            setFieldValue={(date) => setFieldValue(field.name, date)}
                           />
                         )}
                       </Field>
@@ -228,16 +186,9 @@ const StepAccommodations: FC<Props> = ({ title, prevStep, nextStep, setAllData, 
                           field, // { name, value, onChange, onBlur }
                           form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                         }: FieldProps) => (
-                          <DatePicker
-                            selected={field.value}
-                            onChange={(date) => setFieldValue(field.name, date)}
-                            showTimeSelect
-                            showTimeSelectOnly
-                            timeIntervals={15}
-                            timeCaption='Time'
-                            dateFormat='HH:mm'
-                            timeFormat='HH:mm'
-                            className='form-control'
+                          <TimePicker
+                            value={field.value}
+                            setFieldValue={(date) => setFieldValue(field.name, date)}
                           />
                         )}
                       </Field>

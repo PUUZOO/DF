@@ -6,7 +6,7 @@ import {
   HotelPhotosResponse,
   HotelFullResponse,
   RoomServiceFullResponse,
-} from "@/common/fetchClient";
+} from "@/common/types/SwaggerTypes";
 
 export const useHotel = (hotelIdUnique: string | null = null) => {
   const dynamic = useAppSelector(selectDynamic);

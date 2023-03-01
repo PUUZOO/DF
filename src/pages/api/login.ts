@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { withIronSessionApiRoute } from "@/common/middlewares/iron-session";
-import { apiConnection } from "@/common/http";
+import axios, { AxiosResponse } from "axios";
 import { errorsService } from "@/common/services/errors-service";
 import jwt from "jsonwebtoken";
 
@@ -20,7 +20,10 @@ import jwt from "jsonwebtoken";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const response = await apiConnection(req, res).post("/token/administrative/exchange", req.body);
+    const response = await axios.post(
+      process.env.NEXT_PUBLIC_HOST_DRUFFLE_API + "/api/v1/token/administrative/exchange",
+      req.body,
+    );
 
     if (response.status === 200) {
       const payload = jwt.decode(response.data.access_token as string) as TokenPayloadType;
@@ -36,7 +39,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       };
       await req.session.save();
     } else {
-      throw false;
+      res.send(response.data);
     }
 
     res.send({ isLogin: true });

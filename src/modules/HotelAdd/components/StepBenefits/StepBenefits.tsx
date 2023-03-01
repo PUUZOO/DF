@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { InitialAllDataType } from "../../HotelAdd";
 import Button from "@/common/ui/Button";
 import { useRouter } from "next/router";
-import { HotelStateTypes, HotelBenefitsResponse } from "@/common/fetchClient";
+import { HotelStateTypes, HotelBenefitsResponse } from "@/common/types/SwaggerTypes";
 import useSWR, { useSWRConfig } from "swr";
 import HotelBenefit from "./components/HotelBenefit";
 import { useHotel } from "@/common/hook/useHotel";

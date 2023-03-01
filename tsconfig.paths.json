@@ -14,7 +14,8 @@
       "@/images/*": ["common/images/*"],
       "@/middlewares/*": ["common/middlewares/*"],
       "@/redux/*": ["common/redux/*"],
-      "@/services/*": ["common/services/*"]
+      "@/services/*": ["common/services/*"],
+      "@/types/*": ["common/types/*"]
     }
   }
 }

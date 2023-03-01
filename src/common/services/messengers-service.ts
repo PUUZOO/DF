@@ -1,4 +1,3 @@
-import { HotelBenefitsLink } from "../fetchClient";
 import { nextApiConnection } from "../http";
 
 export const messengersService = {

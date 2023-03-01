@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { InitialAllDataType } from "../../HotelAdd";
 import Button from "@/common/ui/Button";
 import { useRouter } from "next/router";
-import { HotelStateTypes } from "@/common/client";
+import { HotelStateTypes } from "@/common/types/SwaggerTypes";
 
 interface Values {
   name: string;

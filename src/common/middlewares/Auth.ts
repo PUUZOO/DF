@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from "querystring";
 import { withIronSessionSsr } from "@/middlewares/iron-session";
 import { wrapper } from "@/common/redux/store";
 import { setUser } from "@/common/redux/reducers/user";
-import { apiConnection } from "@/common/http";
+import jwt from "jsonwebtoken";
 
 type Options = {
   redirectTo: string;
@@ -34,19 +34,18 @@ export function withAuth<P extends { [key: string]: unknown } = { [key: string]:
     ) {
       const role = context.req.session?.user?.role;
 
-      switch (role) {
-        case "druffler":
-          const druffler = await apiConnection(context.req, context.res).get(`/drufflers/me`);
-          if (druffler.status !== 200) return redirectTo(options.redirectTo);
-          break;
+      if (context.req.session.auth?.refresh_token) {
+        const refreshData = jwt.decode(
+          context.req.session.auth.refresh_token as string,
+        ) as TokenPayloadType;
+        const experationRefresh = refreshData
+          ? new Date(refreshData.exp * 1000) <= new Date()
+          : false;
 
-        case "user":
-          const user = await apiConnection(context.req, context.res).get(`/users/me`);
-          if (user.status !== 200) return redirectTo(options.redirectTo);
-          break;
-
-        default:
+        if (experationRefresh) {
+          context.req.session.destroy();
           return redirectTo(options.redirectTo);
+        }
       }
 
       if (!isAuthenticated(context)) {

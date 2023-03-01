@@ -72,9 +72,7 @@ const SignIn: FC<SignInProps> = () => {
                     }}
                     isInvalid={touched[field.name] && !!errors[field.name]}
                     isValid={touched[field.name] && !errors[field.name]}
-                    // TODO разобраться и убрать ts-ignore
-                    // @ts-ignore
-                    error={errors[field.name]}
+                    error={errors[field.name]?.toString()}
                   />
                 )}
               </Field>
@@ -95,9 +93,7 @@ const SignIn: FC<SignInProps> = () => {
                     }}
                     isInvalid={touched[field.name] && !!errors[field.name]}
                     isValid={touched[field.name] && !errors[field.name]}
-                    // TODO тут не понял как мне поступить, в типе указано что может прийти массив строк, но пока не знаю как воспроизвести множественные ошибки и как их лучше отобразить
-                    // @ts-ignore
-                    error={errors[field.name]}
+                    error={errors[field.name]?.toString()}
                   />
                 )}
               </Field>

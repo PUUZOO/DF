@@ -1,4 +1,4 @@
-import { AccountResponse, HotelUpdateRequest, HotelResponse } from "../fetchClient";
+import { AccountResponse, HotelUpdateRequest, HotelResponse } from "@/common/types/SwaggerTypes";
 import { nextApiConnection } from "../http";
 
 export const accountsService = {

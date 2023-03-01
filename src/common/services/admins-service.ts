@@ -1,4 +1,4 @@
-import { AdminInfoUpdateRequest, AdminUpdateRequest } from "../fetchClient";
+import { ChangePasswordIn, AdminInfoUpdateRequest, AdminUpdateRequest } from "@/types/SwaggerTypes";
 import { nextApiConnection } from "../http";
 
 export const adminsService = {
@@ -10,5 +10,8 @@ export const adminsService = {
   },
   delete: async (adminId: string) => {
     return nextApiConnection.delete(`/admins/${adminId}`);
+  },
+  changePassword: async (body: ChangePasswordIn, adminId: string) => {
+    return nextApiConnection.put(`/admins/${adminId}/pwd`, body);
   },
 };

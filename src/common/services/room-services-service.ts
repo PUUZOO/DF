@@ -1,4 +1,4 @@
-import { RoomServiceCreateRequest, RoomServiceUpdateRequest } from "../fetchClient";
+import { RoomServiceCreateRequest, RoomServiceUpdateRequest } from "@/common/types/SwaggerTypes";
 import { nextApiConnection } from "../http";
 
 const endPoint = `/room/services`;

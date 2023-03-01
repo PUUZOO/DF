@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NextPageWithLayout } from "@/pages/_app";
 import Table from "@/ui/Table";
-import { AccountResponse, AccountsListResponse } from "@/common/fetchClient";
+import { AccountResponse, AccountsListResponse } from "@/common/types/SwaggerTypes";
 import EmptyTable from "@/common/components/EmptyTable";
 import Button from "@/common/ui/Button";
 import Offcanvas from "@/common/ui/Offcanvas";
