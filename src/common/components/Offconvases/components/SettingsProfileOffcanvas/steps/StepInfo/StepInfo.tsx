@@ -130,7 +130,7 @@ const StepInfo: FC<Props> = ({ setStepPassword, setStepEmail }) => {
           )}
 
           <div
-            className='py-7 btn btn-outline-light text-primary border-0 w-100 text-start mt-5'
+            className='py-7 btn btn-outline-light text-primary border-0 w-100 text-start'
             onClick={async () => {
               const response = await authService.logout();
 

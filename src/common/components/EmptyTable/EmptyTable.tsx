@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import styled from "styled-components";
 import Button from "@/common/ui/Button";
 import folderIcon from "@/images/folder.svg";
-// import plusIcon from "@/images/plus-icon.svg";
+import plusIcon from "@/images/plus-icon.svg";
 
 type Props = {
   icon?: { src: string };

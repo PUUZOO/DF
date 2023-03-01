@@ -1,16 +1,16 @@
-import { RoomServicesTypes } from "@/common/fetchClient";
+import { RoomServicesTypes } from "@/types/SwaggerTypes";
 import { Dispatch, FC, SetStateAction } from "react";
 import useSWR from "swr";
 import styled from "styled-components";
 import Image from "next/image";
-import { useRoom } from "@/common/hook/useRoom";
+import { useRoomServices } from "@/common/hook/useRoomServices";
 
 interface ServiceListProps {
   setActive: Dispatch<SetStateAction<RoomServicesTypes>>;
 }
 
 const ServiceList: FC<ServiceListProps> = ({ setActive }) => {
-  const { services, serviceItemInfo } = useRoom();
+  const { services, serviceItemInfo } = useRoomServices();
   const handleClick = (item: RoomServicesTypes) => {
     setActive(item);
   };
