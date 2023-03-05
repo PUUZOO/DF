@@ -1,17 +1,17 @@
 import { FC } from "react";
 import { DraggableProvided } from "react-beautiful-dnd";
 import styled from "styled-components";
-import { Column as ColumnType, ITask } from "../data";
+import { Column as ColumnType } from "../data";
 import Drag from "./Drag";
 import Drop from "./Drop";
 import plusIcon from "@/images/plus-dark.svg";
-import OrderCard, { StatusType } from "./OrderCard";
+import OrderCard, { OrderCardProps, StatusType } from "./OrderCard";
 import { RoomServicesTypes } from "@/types/SwaggerTypes";
 
 interface ColumnProps {
   className?: string;
   column: ColumnType;
-  tasks: ITask[];
+  tasks: OrderCardProps[];
   provided?: DraggableProvided;
 }
 

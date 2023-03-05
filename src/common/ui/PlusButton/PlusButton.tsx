@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { ButtonProps } from "react-bootstrap/Button";
+import { FC, ReactNode } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import LetterAvatar from "@/ui/LetterAvatar";
 
-interface Props extends ButtonProps {
-  name?: string;
+interface Props {
+  name?: string | null;
+  children: ReactNode;
   action?: () => void;
 }
 
