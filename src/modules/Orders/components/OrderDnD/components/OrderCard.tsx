@@ -17,7 +17,7 @@ export interface OrderCardProps {
   roomNumber: string;
   guestName: string;
   adminName: string | null;
-  createdAt: string | number | Date;
+  createdAt: string;
   statusType: StatusType;
 }
 
@@ -46,6 +46,7 @@ const OrderCard: FC<OrderCardProps> = ({
   const type = serviceItemInfo[serviceType];
 
   const createdAtDate = moment(+createdAt).format("HH:mm");
+
   const duration = moment.duration(createdAtDate, "minutes").minutes();
 
   //TODO: implement urgent icon conditions

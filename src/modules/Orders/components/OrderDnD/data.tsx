@@ -62,7 +62,7 @@ export const initialData: IData = {
       serviceType: RoomServicesTypes.ORDER_FOOD,
       guestName: "Alena Nemarossi",
       createdAt: "1678040403714",
-      adminName: "alena na",
+      adminName: null,
       statusType: StatusType.OPENED,
     },
   },

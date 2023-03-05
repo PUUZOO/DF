@@ -30,9 +30,8 @@ const PlusButton: FC<Props> = ({ name, action, children, ...props }) => {
   );
 };
 
-// TODO: need to add variables
 const PlusStyled = styled.div`
-  border: 1.5px dashed #8857cd;
+  border: 1.5px dashed var(--bs-info);
   height: 32px;
   width: 32px;
   min-width: 32px;
@@ -42,14 +41,14 @@ const PlusStyled = styled.div`
     line-height: 32px;
     padding-bottom: 3px;
     font-weight: 300;
-    color: #8857cd;
+    color: var(--bs-info);
   }
 `;
 
 const ButtonStyled = styled.button`
   &:hover {
     .plus {
-      background: #8857cd;
+      background: var(--bs-info);
       & > span {
         color: white;
       }
