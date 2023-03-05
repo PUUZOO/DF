@@ -5,6 +5,8 @@ import { Column as ColumnType, ITask } from "../data";
 import Drag from "./Drag";
 import Drop from "./Drop";
 import plusIcon from "@/images/plus-dark.svg";
+import OrderCard, { StatusType } from "./OrderCard";
+import { RoomServicesTypes } from "@/types/SwaggerTypes";
 
 interface ColumnProps {
   className?: string;
@@ -24,7 +26,16 @@ const Column: FC<ColumnProps> = ({ column, tasks, provided }) => {
       <DropStyled droppableId={column.id} type='TASK'>
         {tasks.map((task, index) => (
           <Drag draggableId={task.id} index={index} key={task.id}>
-            <CardStyled className='border rounded mb-3'>{task.id}</CardStyled>
+            {/* <CardStyled className='border rounded mb-3'>{task.id}</CardStyled> */}
+            <OrderCard
+              id={task.id}
+              roomNumber={task.roomNumber}
+              serviceType={task.serviceType}
+              guestName={task.guestName}
+              adminName={task.adminName}
+              createdAt={task.createdAt}
+              statusType={task.statusType}
+            ></OrderCard>
           </Drag>
         ))}
       </DropStyled>
