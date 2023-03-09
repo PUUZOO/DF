@@ -4,7 +4,7 @@ import Drag from "./components/Drag";
 import Column from "./components/Column";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useState } from "react";
-import styled from "styled-components";
+
 import { initialData } from "./data";
 
 import { addTask, deleteTask, onChange } from "./utils";
@@ -35,24 +35,26 @@ export default function App() {
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Drop className='row gx-5' droppableId='all-columns' type='COLUMN' direction='horizontal'>
-        {data.columnOrder.map((columnId, index) => {
-          const column = data.columns[columnId];
-          const tasks = column.taskIds.map((taskId) => data.tasks[taskId]);
-          return (
-            <Drag
-              className='col-md-4'
-              key={columnId}
-              draggableId={columnId}
-              index={index}
-              dragAll={false}
-            >
-              <Column column={column} tasks={tasks} />
-            </Drag>
-          );
-        })}
-      </Drop>
-    </DragDropContext>
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Drop className='row gx-5' droppableId='all-columns' type='COLUMN' direction='horizontal'>
+          {data.columnOrder.map((columnId, index) => {
+            const column = data.columns[columnId];
+            const tasks = column.taskIds.map((taskId) => data.tasks[taskId]);
+            return (
+              <Drag
+                className='col-md-4 h-100'
+                key={columnId}
+                draggableId={columnId}
+                index={index}
+                dragAll={false}
+              >
+                <Column column={column} tasks={tasks} />
+              </Drag>
+            );
+          })}
+        </Drop>
+      </DragDropContext>
+    </>
   );
 }

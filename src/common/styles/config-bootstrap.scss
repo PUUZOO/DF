@@ -42,7 +42,7 @@ $secondary: #667482;
 $info: #773dbd;
 // $warning: $yellow !default;
 // $danger: $red !default;
-$light: #dcdfe3;
+$light: #e6e8eb;
 // $dark: $gray-900 !default;
 
 // scss-docs-start headings-variables
@@ -124,6 +124,14 @@ $input-placeholder-color: #b7bbbe;
 $input-btn-focus-box-shadow: 0px 5px 6px -2px rgba(31, 22, 41, 0.06);
 
 $form-check-input-checked-bg-color: $info;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+// scss-docs-start btn-variables
+$btn-font-weight: 500;
+// scss-docs-end btn-variables
 
 // Offcanvas
 

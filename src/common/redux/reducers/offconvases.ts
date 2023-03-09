@@ -3,10 +3,12 @@ import { AppState } from "../types";
 
 export type Offconvases = {
   settingsProfileOffcanvas: boolean;
+  addOrderOffcanvas: boolean;
 };
 
 const initialStateModals: Offconvases = {
   settingsProfileOffcanvas: false,
+  addOrderOffcanvas: false,
 };
 
 export const offconvasesSlice = createSlice({
@@ -16,10 +18,13 @@ export const offconvasesSlice = createSlice({
     toggleSettingsProfileOffcanvas: (state) => {
       state.settingsProfileOffcanvas = !state.settingsProfileOffcanvas;
     },
+    toggleAddOrderOffcanvas: (state) => {
+      state.addOrderOffcanvas = !state.addOrderOffcanvas;
+    },
   },
 });
 
-export const { toggleSettingsProfileOffcanvas } = offconvasesSlice.actions;
+export const { toggleSettingsProfileOffcanvas, toggleAddOrderOffcanvas } = offconvasesSlice.actions;
 
 export const selectOffconvases = (state: AppState) => state.offconvases;
 

@@ -1,10 +1,13 @@
 import { FC } from "react";
-import { useHotel } from "@/common/hook/useHotel";
 import Image from "next/image";
-import styled from "styled-components";
 import Button from "@/common/ui/Button";
-import Switch from "@/common/ui/Switch/Switch";
-import { roomServicesService } from "@/common/services/room-services-service";
+import { useRouter } from "next/router";
+import { useHotel } from "@/common/hook/useHotel";
+import { useRoomServices } from "@/common/hook/useRoomServices";
+import EmptyTable from "@/common/components/EmptyTable";
+import hotelIcon from "@/images/hotel-services.svg";
+import plusIcon from "@/images/plus-icon.svg";
+import RoomService from "./RoomService";
 
 const servicesNames = {
   order_food: "Заказ еды",
@@ -14,22 +17,46 @@ const servicesNames = {
 };
 
 const RoomServicesList: FC = () => {
-  const { roomServices, mutateRoomServices } = useHotel();
+  const { id: hotelId, roomServices } = useHotel();
+  const router = useRouter();
 
   if (!roomServices) {
     return <>no services</>;
   }
 
-  const activeRoomServices = roomServices.filter(({ is_active }) => is_active);
-  const notActiveRoomServices = roomServices.filter(({ is_active }) => !is_active);
+  const activeRoomServices = roomServices.filter(
+    ({ is_active, is_deleted }) => is_active && !is_deleted,
+  );
+  const notActiveRoomServices = roomServices.filter(
+    ({ is_active, is_deleted }) => !is_active && !is_deleted,
+  );
+
+  if (roomServices && roomServices.length === 0)
+    return (
+      <EmptyTable
+        icon={hotelIcon}
+        title='Услуг пока нет'
+        description='Гости не смогут ими воспользоваться, давайте добавим первую'
+        onClick={() => router.push(`/druffler/hotels/add?hotelId=${hotelId}`)}
+        btnChildren={
+          <>
+            <img src={plusIcon.src} alt='' />
+            <span className='ms-5'>Добавить</span>
+          </>
+        }
+      />
+    );
 
   return (
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <Button className='btn btn-light w-100'>
+          <Button
+            className='btn btn-light w-100'
+            onClick={() => router.push(`/druffler/hotels/add?hotelId=${hotelId}`)}
+          >
             <Image src={"/svg/plus.svg"} width={24} height={24} alt='' />
-            <span className='fs-4'>Добавить услугу</span>
+            <span className='ms-5 fs-4'>Добавить услугу</span>
           </Button>
         </div>
       </div>
@@ -45,44 +72,8 @@ const RoomServicesList: FC = () => {
 
           <div className='row'>
             <div className='col'>
-              {activeRoomServices.map(({ service_type, custom_name, id, is_active }) => (
-                <RoomServiceStyled
-                  key={id}
-                  className='row justify-content-between align-items-center py-8'
-                >
-                  <div className='col d-flex flex-row'>
-                    <div className='col-2'>
-                      <Switch
-                        checked={is_active}
-                        onClick={async () => {
-                          await roomServicesService.update({ is_active: !is_active }, id);
-                          mutateRoomServices();
-                        }}
-                      />
-                    </div>
-                    <div className='col'>
-                      {service_type === "other" ? custom_name : servicesNames[service_type]}
-                    </div>
-                  </div>
-                  <div className='col-2'>
-                    <Image
-                      src={"/svg/edit.svg"}
-                      width={24}
-                      height={24}
-                      alt='service edit'
-                      onClick={() => console.log("service edit")}
-                      style={{ cursor: "pointer" }}
-                    />
-                    <Image
-                      src={"/svg/bin.svg"}
-                      width={24}
-                      height={24}
-                      alt='service delete'
-                      onClick={() => console.log("service delete")}
-                      style={{ cursor: "pointer" }}
-                    />
-                  </div>
-                </RoomServiceStyled>
+              {activeRoomServices.map((service) => (
+                <RoomService service={service} key={service.id} />
               ))}
             </div>
           </div>
@@ -100,44 +91,8 @@ const RoomServicesList: FC = () => {
 
           <div className='row'>
             <div className='col'>
-              {notActiveRoomServices.map(({ service_type, custom_name, id, is_active }) => (
-                <RoomServiceStyled
-                  key={id}
-                  className='row justify-content-between align-items-center py-8'
-                >
-                  <div className='col d-flex flex-row'>
-                    <div className='col-2'>
-                      <Switch
-                        checked={is_active}
-                        onClick={async () => {
-                          await roomServicesService.update({ is_active: !is_active }, id);
-                          mutateRoomServices();
-                        }}
-                      />
-                    </div>
-                    <div className='col'>
-                      {service_type === "other" ? custom_name : servicesNames[service_type]}
-                    </div>
-                  </div>
-                  <div className='col-2'>
-                    <Image
-                      src={"/svg/edit.svg"}
-                      width={24}
-                      height={24}
-                      alt='service edit'
-                      onClick={() => console.log("service edit")}
-                      style={{ cursor: "pointer" }}
-                    />
-                    <Image
-                      src={"/svg/bin.svg"}
-                      width={24}
-                      height={24}
-                      alt='service delete'
-                      onClick={() => console.log("service delete")}
-                      style={{ cursor: "pointer" }}
-                    />
-                  </div>
-                </RoomServiceStyled>
+              {notActiveRoomServices.map((service) => (
+                <RoomService service={service} key={service.id} />
               ))}
             </div>
           </div>
@@ -146,18 +101,5 @@ const RoomServicesList: FC = () => {
     </div>
   );
 };
-
-const RoomServiceStyled = styled.div`
-  border: 1px solid white;
-
-  /* & + & {
-    border-top: 1px solid #e6e8eb;
-  } */
-
-  &:hover {
-    border: 1px solid #e6e8eb;
-    border-radius: 12px;
-  }
-`;
 
 export default RoomServicesList;

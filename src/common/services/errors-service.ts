@@ -5,7 +5,7 @@ export const errorsService = {
   captureException: (error: Error | any) => {
     console.log("######################");
     console.error("Status code -> ", error.response?.status);
-    console.error("Method -> ", error?.response?.method);
+    console.error("Method -> ", error?.request?.method);
     console.error("Request url -> ", error.request?.res?.responseUrl);
     console.error("Error data -> ", error.response?.data);
     console.log("######################");

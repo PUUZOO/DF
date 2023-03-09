@@ -38,15 +38,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         user: payload.user,
       };
       await req.session.save();
+
+      res.send({ isLogin: true, role: payload.role, error: {} });
     } else {
       res.send(response.data);
     }
-
-    res.send({ isLogin: true });
   } catch (error: any) {
-    console.log(error);
     errorsService.captureException(error);
-    res.send({ isLogin: false });
+    res.send({ isLogin: false, error: error.response?.data });
   }
 };
 

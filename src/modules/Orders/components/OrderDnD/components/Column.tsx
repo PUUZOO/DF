@@ -7,6 +7,8 @@ import Drop from "./Drop";
 import plusIcon from "@/images/plus-dark.svg";
 import OrderCard, { OrderCardProps, StatusType } from "./OrderCard";
 import { RoomServicesTypes } from "@/types/SwaggerTypes";
+import { useAppDispatch } from "@/redux/hooks";
+import { toggleAddOrderOffcanvas } from "@/common/redux/reducers/offconvases";
 
 interface ColumnProps {
   className?: string;
@@ -16,12 +18,19 @@ interface ColumnProps {
 }
 
 const Column: FC<ColumnProps> = ({ column, tasks, provided }) => {
+  const dispatch = useAppDispatch();
   return (
     <WrapperStyled>
       {/* <h3 {...provided?.dragHandleProps}>{column.title}</h3> */}
       <div className='d-flex justify-content-between align-items-center mb-7'>
         <TitleStyled style={{ background: column.titleColor }}>{column.title}</TitleStyled>
-        <img src={plusIcon.src} alt='' />
+        <img
+          src={plusIcon.src}
+          alt=''
+          onClick={() => {
+            dispatch(toggleAddOrderOffcanvas());
+          }}
+        />
       </div>
       <DropStyled droppableId={column.id} type='TASK'>
         {tasks.map((task, index) => (
@@ -35,7 +44,7 @@ const Column: FC<ColumnProps> = ({ column, tasks, provided }) => {
               adminName={task.adminName}
               createdAt={task.createdAt}
               statusType={task.statusType}
-            ></OrderCard>
+            />
           </Drag>
         ))}
       </DropStyled>
@@ -58,7 +67,9 @@ const WrapperStyled = styled.div`
   flex-direction: column;
 `;
 
-const DropStyled = styled(Drop)``;
+const DropStyled = styled(Drop)`
+  height: 100vh;
+`;
 
 const CardStyled = styled.div`
   height: 192px;

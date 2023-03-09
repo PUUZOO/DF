@@ -29,8 +29,16 @@ export const refreshAccessToken = async (
       },
     );
 
+    console.log(refreshResponse);
+
     if (refreshResponse?.ok) {
       const refreshResponseData = await refreshResponse.json();
+
+      console.log(
+        "\x1b[31m%s\x1b[0m\x1b[33m%s\x1b[0m",
+        `[DRUFFLE] After refresh token`,
+        refreshResponseData,
+      );
 
       if (refreshResponseData) {
         const newAccessToken = refreshResponseData.access_token;
@@ -56,13 +64,13 @@ export const refreshAccessToken = async (
         return req.session.destroy();
       }
     } else {
-      // console.log(
-      //   "\x1b[31m%s\x1b[0m\x1b[33m%s\x1b[0m",
-      //   `[DRUFFLE] Refresh error - `,
-      //   `Status -> ${refreshResponse.status} Error -> ${JSON.stringify(
-      //     await refreshResponse.json(),
-      //   )}`,
-      // );
+      console.log(
+        "\x1b[31m%s\x1b[0m\x1b[33m%s\x1b[0m",
+        `[DRUFFLE] Refresh error - `,
+        `Status -> ${refreshResponse.status} Error -> ${JSON.stringify(
+          await refreshResponse.json(),
+        )}`,
+      );
       return req.session.destroy();
     }
   } catch (error) {

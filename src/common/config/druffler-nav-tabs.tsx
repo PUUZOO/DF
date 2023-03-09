@@ -53,4 +53,11 @@ export default [
     icon: statisticsIcon,
     type: "main",
   },
+  {
+    title: "allHotels",
+    name: "Отели",
+    urlPath: "/druffler/all-hotels",
+    icon: hotelIcon,
+    type: "main",
+  },
 ];

@@ -9,6 +9,7 @@ import Input from "@/common/ui/Input";
 import SchemaValidation from "./validation/index";
 import { createNextApiConnection } from "@/common/http/axiosConnection";
 import InputPassword from "@/common/ui/InputPassword";
+import { toast } from "react-toastify";
 
 export interface SignInProps {}
 
@@ -47,10 +48,11 @@ const SignIn: FC<SignInProps> = () => {
               password: values.password,
             });
 
-            if (result.data.isLogin) {
-              router.push("./druffler/accounts");
+            if (result.data.isLogin && result.data.role) {
+              if (result.data.role === "druffler") router.push("./druffler/accounts");
+              if (result.data.role === "admin") router.push("./admin/orders");
             } else {
-              console.log("not login");
+              toast.warn(result.data.error?.detail);
             }
           }}
         >

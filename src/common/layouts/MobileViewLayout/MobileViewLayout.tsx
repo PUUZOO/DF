@@ -6,19 +6,17 @@ type Props = { mobileFrame: ReactNode; children: ReactNode; headers?: ReactNode 
 
 const MobileViewLayout: FC<Props> = ({ mobileFrame, children, headers }) => {
   return (
-    <div className='container-fluid' style={{ height: "100%", background: "#F3F4F5" }}>
+    <div className='container-fluid ' style={{ height: "100vh", background: "#F3F4F5" }}>
       <div className='row h-100'>
         <div className='col-md-5 h-100 d-flex align-items-center justify-content-center position-relative'>
-          <div
-            className='d-flex align-items-center justify-content-center'
-            style={{ height: "100vh" }}
-          >
-            <MobileViewLayoutStyled className='sticky-top overflow-scroll'>
-              {mobileFrame}
-            </MobileViewLayoutStyled>
+          <div className='d-flex align-items-center justify-content-center'>
+            <MobileViewLayoutStyled>{mobileFrame}</MobileViewLayoutStyled>
           </div>
         </div>
-        <div className='col-md-7 bg-white' style={{ minHeight: "100vh", padding: "40px" }}>
+        <div
+          className='col-md-7 bg-white'
+          style={{ padding: "40px", overflow: "auto", height: "100vh" }}
+        >
           <div className='d-flex justify-content-between align-content-center'>
             <Logo />
             {headers}

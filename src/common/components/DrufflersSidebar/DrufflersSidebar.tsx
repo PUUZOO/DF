@@ -120,13 +120,13 @@ const DrufflersSidebar: FC<Props> = () => {
                     currentTab === tab.title && "active",
                   ])}
                 >
-                  <Link href={`${tab.urlPath}`}>
+                  <Link href={tab.urlPath}>
                     <Image
                       className='mx-7 my-5'
                       src={tab.icon}
                       width={24}
                       height={24}
-                      alt={`${name}`}
+                      alt={tab.name}
                     />
                     {tab.name}
                   </Link>
@@ -148,7 +148,7 @@ const DrufflersSidebar: FC<Props> = () => {
                   currentTab === tab.title && "active",
                 ])}
               >
-                <Link href={`${tab.urlPath}`}>
+                <Link href={`${tab.urlPath}`} passHref>
                   <Image
                     className='mx-7 my-5'
                     src={tab.icon}

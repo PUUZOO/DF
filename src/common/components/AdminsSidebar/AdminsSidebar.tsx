@@ -1,18 +1,13 @@
 import { FC } from "react";
 import { useAppDispatch } from "@/redux/hooks";
 import { toggleSettingsProfileOffcanvas } from "@/common/redux/reducers/offconvases";
-
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import useSWR from "swr";
-
 import Button from "@/common/ui/Button";
 import Logo from "@/common/components/Logo";
-
 import tabs from "@/config/admin-nav-tabs.json";
-
 import clsx from "clsx";
 import styled from "styled-components";
 

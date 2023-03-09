@@ -1,23 +1,32 @@
-import { useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import styled from "styled-components";
-import { useHotel } from "@/common/hook/useHotel";
-import InputFile from "@/common/ui/InputFile";
-import iconFolder from "@/images/icon-folder.svg";
-import Input from "@/common/ui/Input";
 import ServiceList from "./components/ServiceList";
-import { RoomServicesTypes } from "@/types/SwaggerTypes";
 import ServiceSelection from "../ServiceSelection";
+import { RoomServicesTypes, RoomServiceMenuItemResponse } from "@/types/SwaggerTypes";
 
-const AddService = () => {
-  const [active, setActive] = useState<RoomServicesTypes>(RoomServicesTypes.ORDER_FOOD);
+type Props = {
+  activeType: RoomServicesTypes | undefined;
+  setActiveType: Dispatch<SetStateAction<RoomServicesTypes | undefined>>;
+  setAllData: Dispatch<SetStateAction<RoomServiceMenuItemResponse[]>>;
+};
 
+const AddService: FC<Props> = ({ activeType, setActiveType, setAllData }) => {
   return (
-    <div className='h-100 d-flex flex-column align-items-center justify-content-center'>
+    <div
+      className='d-flex flex-column align-items-center'
+      style={{ marginTop: "70px", marginBottom: "70px" }}
+    >
       <MainFrameStyled>
         <h2 className='mb-11'>Новая услуга</h2>
-        <ServiceList setActive={setActive} />
+        <ServiceList
+          active={activeType}
+          setActive={(item) => {
+            setActiveType(item);
+            setAllData([]);
+          }}
+        />
         {/* Add active condition to render right component */}
-        <ServiceSelection type={active} />
+        <ServiceSelection type={activeType} setAllData={setAllData} />
       </MainFrameStyled>
     </div>
   );

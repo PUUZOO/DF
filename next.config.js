@@ -23,6 +23,11 @@ const nextConfig = {
         port: "8000",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname: "89.108.65.55",
+        pathname: "/**",
+      },
     ],
   },
   async rewrites() {

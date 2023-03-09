@@ -37,6 +37,8 @@ const SidebarSideStyled = styled.div`
 const MainBlockStyled = styled.div`
   padding: 40px 48px;
   width: 100%;
+  height: 100vh;
+  overflow: auto;
 `;
 
 export default DashboardLayout;

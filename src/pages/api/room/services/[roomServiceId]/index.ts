@@ -27,7 +27,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           break;
 
         case "DELETE":
-          const removeItems: AxiosResponse = await apiConnection(req, res).post(endPoint, req.body);
+          const removeItems: AxiosResponse = await apiConnection(req, res).delete(
+            endPoint,
+            req.body,
+          );
+
           makeNextApiResponse(res, removeItems);
           break;
 

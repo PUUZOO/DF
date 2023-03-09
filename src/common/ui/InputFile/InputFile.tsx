@@ -28,13 +28,13 @@ interface FilesDragAndDropProps {
 const InputFile = ({
   onUpload,
   children,
-  count,
+  count = 1,
   formats,
-  openDialogOnClick = false,
-  hoverText = "Drop files here",
+  openDialogOnClick = true,
+  hoverText = "Перетащите сюда файлы",
   successText = "Загружаются",
   errorCountText = ({ count }) => `Вы можете загрузить только ${count} файла(ов)`,
-  errorFormatText = ({ formats }) => `Можно загужать только: ${formats && formats.join(", ")}`,
+  errorFormatText = ({ formats }) => `Можно загружать только: ${formats && formats.join(", ")}`,
   className,
   containerStyles = { height: "250px" },
   hoverMessageStyles = {},
@@ -64,17 +64,20 @@ const InputFile = ({
   const input = React.useRef(null);
 
   React.useEffect(() => {
-    drop.current?.addEventListener("dragover", handleDragOver);
-    drop.current?.addEventListener("drop", handleDrop);
-    drop.current?.addEventListener("dragenter", handleDragEnter);
-    drop.current?.addEventListener("dragleave", handleDragLeave);
+    // TODO не уверен что решение нормальное
+    if (!disabled) {
+      drop.current?.addEventListener("dragover", handleDragOver);
+      drop.current?.addEventListener("drop", handleDrop);
+      drop.current?.addEventListener("dragenter", handleDragEnter);
+      drop.current?.addEventListener("dragleave", handleDragLeave);
+    }
     return () => {
       drop.current?.removeEventListener("dragover", handleDragOver);
       drop.current?.removeEventListener("drop", handleDrop);
       drop.current?.removeEventListener("dragenter", handleDragEnter);
       drop.current?.removeEventListener("dragleave", handleDragLeave);
     };
-  }, []);
+  }, [disabled]);
 
   const handleDragOver = (e: DragEvent) => {
     e.preventDefault();
@@ -197,7 +200,7 @@ const InputFile = ({
         cursor: openDialogOnClick ? "pointer" : "default",
         ...containerStyles,
       }}
-      onClick={openDialogOnClick ? openFileDialog : undefined}
+      onClick={disabled ? undefined : openDialogOnClick ? openFileDialog : undefined}
     >
       {openDialogOnClick && (
         <input
@@ -237,9 +240,11 @@ const InputFile = ({
         </div>
       )}
       {children}
-      <Button className='mt-8' variant='info' disabled={disabled}>
-        Загрузить{" "}
-      </Button>
+      {openDialogOnClick && (
+        <Button className='mt-8' variant='info' disabled={disabled}>
+          Загрузить
+        </Button>
+      )}
     </div>
   );
 };
@@ -274,7 +279,7 @@ const styles: {
     bottom: "0",
     width: "100%",
     height: "100%",
-    zIndex: 9999,
+    zIndex: 1,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
