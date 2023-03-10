@@ -7,4 +7,3 @@ export type RoomBedsCreateRequest = {
     description?: string;
     is_active?: boolean;
 };
-

@@ -23,4 +23,3 @@ export type RoomsFullResponse = {
     benefits?: Array<RoomBenefitsResponse>;
     photos?: Array<RoomPhotosResponse>;
 };
-

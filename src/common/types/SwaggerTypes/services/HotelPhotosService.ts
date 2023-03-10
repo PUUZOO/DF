@@ -15,13 +15,13 @@ export class HotelPhotosService {
     /**
      * Get Photos By Hotel Id
      * Get photos by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelPhotosResponse Successful Response
      * @throws ApiError
      */
     public static getPhotosByHotelIdApiV1HotelsHotelIdPhotosGet(
-        hotelId: string,
-    ): CancelablePromise<Array<HotelPhotosResponse>> {
+hotelId: string,
+): CancelablePromise<Array<HotelPhotosResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/photos',
@@ -37,15 +37,15 @@ export class HotelPhotosService {
     /**
      * Create Photos
      * Create new hotel photos. Applicable for Administrative account
-     * @param hotelId
-     * @param formData
+     * @param hotelId 
+     * @param formData 
      * @returns HotelPhotosResponse Successful Response
      * @throws ApiError
      */
     public static createPhotosApiV1HotelsHotelIdPhotosPost(
-        hotelId: string,
-        formData: Body_create_photos_api_v1_hotels__hotel_id__photos_post,
-    ): CancelablePromise<HotelPhotosResponse> {
+hotelId: string,
+formData: Body_create_photos_api_v1_hotels__hotel_id__photos_post,
+): CancelablePromise<HotelPhotosResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/{hotel_id}/photos',
@@ -63,17 +63,17 @@ export class HotelPhotosService {
     /**
      * Update Photos By Id
      * Get photos by hotel id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param photoId
-     * @param requestBody
+     * @param hotelId 
+     * @param photoId 
+     * @param requestBody 
      * @returns HotelPhotosResponse Successful Response
      * @throws ApiError
      */
     public static updatePhotosByIdApiV1HotelsHotelIdPhotosPhotoIdPut(
-        hotelId: string,
-        photoId: string,
-        requestBody: HotelPhotosUpdateRequest,
-    ): CancelablePromise<HotelPhotosResponse> {
+hotelId: string,
+photoId: string,
+requestBody: HotelPhotosUpdateRequest,
+): CancelablePromise<HotelPhotosResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/{hotel_id}/photos/{photo_id}',
@@ -92,15 +92,15 @@ export class HotelPhotosService {
     /**
      * Delete Photos By Id
      * Delete photos by id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param photoId
+     * @param hotelId 
+     * @param photoId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deletePhotosByIdApiV1HotelsHotelIdPhotosPhotoIdDelete(
-        hotelId: string,
-        photoId: string,
-    ): CancelablePromise<StatusResponse> {
+hotelId: string,
+photoId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/hotels/{hotel_id}/photos/{photo_id}',

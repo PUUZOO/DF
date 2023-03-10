@@ -18,4 +18,3 @@ export type HotelAccommodationsUpdateRequest = {
     cash_payment: boolean;
     card_payment: boolean;
 };
-

@@ -13,13 +13,13 @@ export class HotelAddressService {
     /**
      * Get Address By Hotel Id
      * Get address by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelAddressResponse Successful Response
      * @throws ApiError
      */
     public static getAddressByHotelIdApiV1HotelsHotelIdAddressGet(
-        hotelId: string,
-    ): CancelablePromise<HotelAddressResponse> {
+hotelId: string,
+): CancelablePromise<HotelAddressResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/address',
@@ -35,15 +35,15 @@ export class HotelAddressService {
     /**
      * Update Address By Hotel Id
      * Get address by hotel id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelAddressResponse Successful Response
      * @throws ApiError
      */
     public static updateAddressByHotelIdApiV1HotelsHotelIdAddressPut(
-        hotelId: string,
-        requestBody: HotelAddressUpdateRequest,
-    ): CancelablePromise<HotelAddressResponse> {
+hotelId: string,
+requestBody: HotelAddressUpdateRequest,
+): CancelablePromise<HotelAddressResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/{hotel_id}/address',
@@ -61,15 +61,15 @@ export class HotelAddressService {
     /**
      * Create Address
      * Create new hotel address. Applicable for Administrative account
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelAddressResponse Successful Response
      * @throws ApiError
      */
     public static createAddressApiV1HotelsHotelIdAddressPost(
-        hotelId: string,
-        requestBody: HotelAddressUpdateRequest,
-    ): CancelablePromise<HotelAddressResponse> {
+hotelId: string,
+requestBody: HotelAddressUpdateRequest,
+): CancelablePromise<HotelAddressResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/{hotel_id}/address',

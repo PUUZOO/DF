@@ -5,4 +5,3 @@
 export type NewPasswordIn = {
     password: string;
 };
-

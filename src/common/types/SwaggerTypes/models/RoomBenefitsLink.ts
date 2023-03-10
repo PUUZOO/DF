@@ -6,4 +6,3 @@ export type RoomBenefitsLink = {
     room_id: string;
     benefit_id: string;
 };
-

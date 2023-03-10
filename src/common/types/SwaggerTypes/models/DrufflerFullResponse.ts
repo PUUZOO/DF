@@ -14,4 +14,3 @@ export type DrufflerFullResponse = {
     updated_at: string;
     info?: DrufflerInfoResponse;
 };
-

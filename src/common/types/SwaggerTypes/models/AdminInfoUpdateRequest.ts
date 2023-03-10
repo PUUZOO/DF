@@ -10,4 +10,3 @@ export type AdminInfoUpdateRequest = {
     description?: string;
     birthday?: string;
 };
-

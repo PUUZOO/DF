@@ -5,4 +5,3 @@
 export type RoomPhotosUpdateRequest = {
     is_active: boolean;
 };
-

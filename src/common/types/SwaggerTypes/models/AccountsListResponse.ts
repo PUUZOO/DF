@@ -8,4 +8,3 @@ export type AccountsListResponse = {
     data: Array<AccountResponse>;
     count: number;
 };
-

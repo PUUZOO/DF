@@ -14,4 +14,3 @@ export type HotelContactsResponse = {
     hotel_id: string;
     id: string;
 };
-

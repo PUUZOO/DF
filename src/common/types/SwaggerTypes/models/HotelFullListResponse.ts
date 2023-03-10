@@ -8,4 +8,3 @@ export type HotelFullListResponse = {
     data: Array<HotelFullResponse>;
     amount: number;
 };
-

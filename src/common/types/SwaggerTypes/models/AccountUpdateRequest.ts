@@ -9,4 +9,3 @@ export type AccountUpdateRequest = {
     contact_phone?: string;
     is_active?: boolean;
 };
-

@@ -10,4 +10,3 @@ export type HotelAddressResponse = {
     hotel_id: string;
     id: string;
 };
-

@@ -8,4 +8,3 @@ export type HotelMessengersResponse = {
     hotel_id: string;
     id: string;
 };
-

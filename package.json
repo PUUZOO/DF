@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-client": "openapi --input http://89.108.65.55/openapi.json --output ./src/common/types/SwaggerTypes",
+    "generate-client": "openapi --input https://dev.druffleapp.ru/openapi.json --output ./src/common/types/SwaggerTypes",
     "format": "prettier --ignore-path .gitignore --write .",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "rm -rf .husky/ && husky install && husky add .husky/pre-commit 'yarn lint-staged'"

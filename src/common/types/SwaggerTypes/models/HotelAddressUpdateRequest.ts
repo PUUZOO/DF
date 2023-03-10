@@ -8,4 +8,3 @@ export type HotelAddressUpdateRequest = {
     street?: string;
     building?: string;
 };
-

@@ -29,13 +29,13 @@ export class HotelBenefitsService {
     /**
      * Create Benefits
      * Create new hotel benefits. Applicable only for Druffler user
-     * @param requestBody
+     * @param requestBody 
      * @returns HotelBenefitsResponse Successful Response
      * @throws ApiError
      */
     public static createBenefitsApiV1HotelsBenefitsPost(
-        requestBody: HotelBenefitsCreateRequest,
-    ): CancelablePromise<HotelBenefitsResponse> {
+requestBody: HotelBenefitsCreateRequest,
+): CancelablePromise<HotelBenefitsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/benefits',
@@ -50,13 +50,13 @@ export class HotelBenefitsService {
     /**
      * Link Benefits
      * Create Hotel-Benefit link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static linkBenefitsApiV1HotelsBenefitsLinkPost(
-        requestBody: HotelBenefitsLink,
-    ): CancelablePromise<StatusResponse> {
+requestBody: HotelBenefitsLink,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/benefits/link',
@@ -71,13 +71,13 @@ export class HotelBenefitsService {
     /**
      * Delete Benefits Link
      * Delete Hotel-Benefit link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteBenefitsLinkApiV1HotelsBenefitsUnlinkPost(
-        requestBody: HotelBenefitsLink,
-    ): CancelablePromise<StatusResponse> {
+requestBody: HotelBenefitsLink,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/benefits/unlink',
@@ -105,15 +105,15 @@ export class HotelBenefitsService {
     /**
      * Update Benefits
      * Update hotel benefit by benefit_id. Applicable only for Druffler user
-     * @param benefitId
-     * @param requestBody
+     * @param benefitId 
+     * @param requestBody 
      * @returns HotelBenefitsResponse Successful Response
      * @throws ApiError
      */
     public static updateBenefitsApiV1HotelsBenefitsBenefitIdPut(
-        benefitId: string,
-        requestBody: HotelBenefitsUpdateRequest,
-    ): CancelablePromise<HotelBenefitsResponse> {
+benefitId: string,
+requestBody: HotelBenefitsUpdateRequest,
+): CancelablePromise<HotelBenefitsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/benefits/{benefit_id}',

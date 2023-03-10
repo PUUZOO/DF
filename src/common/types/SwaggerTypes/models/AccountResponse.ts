@@ -12,4 +12,3 @@ export type AccountResponse = {
     agreement?: string;
     id: string;
 };
-

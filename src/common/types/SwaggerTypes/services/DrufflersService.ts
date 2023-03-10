@@ -17,13 +17,13 @@ export class DrufflersService {
     /**
      * Login Druffler
      * Login to druffler account.
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static loginDrufflerApiV1DrufflersLoginPost(
-        requestBody: PasswordIn,
-    ): CancelablePromise<JwtToken> {
+requestBody: PasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/drufflers/login',
@@ -64,13 +64,13 @@ export class DrufflersService {
     /**
      * Create Druffler
      * Create new druffler. Applicable only for Druffler user
-     * @param requestBody
+     * @param requestBody 
      * @returns DrufflerFullResponse Successful Response
      * @throws ApiError
      */
     public static createDrufflerApiV1DrufflersPost(
-        requestBody: DrufflerCreateRequest,
-    ): CancelablePromise<DrufflerFullResponse> {
+requestBody: DrufflerCreateRequest,
+): CancelablePromise<DrufflerFullResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/drufflers/',
@@ -85,13 +85,13 @@ export class DrufflersService {
     /**
      * Druffler Reset Password
      * Reset druffler password. Applicable only for Druffler user
-     * @param drufflerId
+     * @param drufflerId 
      * @returns DrufflerFullResponse Successful Response
      * @throws ApiError
      */
     public static drufflerResetPasswordApiV1DrufflersPwdResetPost(
-        drufflerId: string,
-    ): CancelablePromise<DrufflerFullResponse> {
+drufflerId: string,
+): CancelablePromise<DrufflerFullResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/drufflers/pwd/reset',
@@ -107,15 +107,15 @@ export class DrufflersService {
     /**
      * Update Druffler Info By Druffler Id
      * Update druffler info by druffler id. Applicable only Druffler user only
-     * @param drufflerId
-     * @param requestBody
+     * @param drufflerId 
+     * @param requestBody 
      * @returns DrufflerInfoResponse Successful Response
      * @throws ApiError
      */
     public static updateDrufflerInfoByDrufflerIdApiV1DrufflersDrufflerIdInfoPut(
-        drufflerId: string,
-        requestBody: DrufflerInfoUpdateRequest,
-    ): CancelablePromise<DrufflerInfoResponse> {
+drufflerId: string,
+requestBody: DrufflerInfoUpdateRequest,
+): CancelablePromise<DrufflerInfoResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/drufflers/{druffler_id}/info',

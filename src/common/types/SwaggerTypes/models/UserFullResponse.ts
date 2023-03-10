@@ -13,4 +13,3 @@ export type UserFullResponse = {
     updated_at: string;
     info: UserInfoResponse;
 };
-

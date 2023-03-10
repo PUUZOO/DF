@@ -15,13 +15,13 @@ export class OrdersUserApiService {
     /**
      * Place Order
      * Place order. Applicable only for users
-     * @param requestBody
+     * @param requestBody 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static placeOrderApiV1OrdersMyPost(
-        requestBody: OrderCreateRequest,
-    ): CancelablePromise<OrderFullResponse> {
+requestBody: OrderCreateRequest,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/orders/my/',
@@ -36,13 +36,13 @@ export class OrdersUserApiService {
     /**
      * Calculate Order Price
      * Calculate total price for order. Public link
-     * @param requestBody
+     * @param requestBody 
      * @returns OrderPrice Successful Response
      * @throws ApiError
      */
     public static calculateOrderPriceApiV1OrdersMyPricePost(
-        requestBody: OrderCreateRequest,
-    ): CancelablePromise<OrderPrice> {
+requestBody: OrderCreateRequest,
+): CancelablePromise<OrderPrice> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/orders/my/price',
@@ -70,15 +70,15 @@ export class OrdersUserApiService {
     /**
      * Get My Orders History
      * Get user order history. Applicable only for users
-     * @param skip
-     * @param limit
+     * @param skip 
+     * @param limit 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static getMyOrdersHistoryApiV1OrdersMyHistoryGet(
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<Array<Record<string, OrderFullResponse>>> {
+skip?: number,
+limit: number = 50,
+): CancelablePromise<Record<string, Array<OrderFullResponse>>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/my/history',
@@ -95,13 +95,13 @@ export class OrdersUserApiService {
     /**
      * Get My Order Details By Id
      * Get user order details. Applicable only for users
-     * @param orderId
+     * @param orderId 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static getMyOrderDetailsByIdApiV1OrdersMyOrderIdGet(
-        orderId: string,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/my/{order_id}',
@@ -117,13 +117,13 @@ export class OrdersUserApiService {
     /**
      * Cancel Order By Id
      * Cancel user order. Applicable only for users
-     * @param orderId
+     * @param orderId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static cancelOrderByIdApiV1OrdersMyOrderIdDelete(
-        orderId: string,
-    ): CancelablePromise<StatusResponse> {
+orderId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/orders/my/{order_id}',
@@ -139,13 +139,13 @@ export class OrdersUserApiService {
     /**
      * Rate Order By Id
      * Rate user order. Applicable only for users
-     * @param orderId
+     * @param orderId 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static rateOrderByIdApiV1OrdersMyOrderIdRateGet(
-        orderId: string,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/my/{order_id}/rate',

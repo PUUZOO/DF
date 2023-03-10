@@ -6,4 +6,3 @@ export type RoomBedsLinkRequest = {
     room_id: string;
     bed_id: string;
 };
-

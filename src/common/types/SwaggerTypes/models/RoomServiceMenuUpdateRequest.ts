@@ -7,4 +7,3 @@ export type RoomServiceMenuUpdateRequest = {
     description?: string;
     is_active: boolean;
 };
-

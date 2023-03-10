@@ -17,13 +17,13 @@ export class RoomServicesMenuService {
     /**
      * Get Menu By Room Service Id
      * Get menu by room service id. Applicable for Administrative accounts
-     * @param roomServiceId
+     * @param roomServiceId 
      * @returns RoomServiceMenuResponse Successful Response
      * @throws ApiError
      */
     public static getMenuByRoomServiceIdApiV1RoomServicesRoomServiceIdMenuGet(
-        roomServiceId: string,
-    ): CancelablePromise<Array<RoomServiceMenuResponse>> {
+roomServiceId: string,
+): CancelablePromise<Array<RoomServiceMenuResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/room/services/{room_service_id}/menu',
@@ -39,15 +39,15 @@ export class RoomServicesMenuService {
     /**
      * Upload Menu
      * Upload menu. Applicable for Administrative account
-     * @param roomServiceId
-     * @param formData
+     * @param roomServiceId 
+     * @param formData 
      * @returns RoomServiceMenuResponse Successful Response
      * @throws ApiError
      */
     public static uploadMenuApiV1RoomServicesRoomServiceIdMenuPost(
-        roomServiceId: string,
-        formData: Body_upload_menu_api_v1_room_services__room_service_id__menu_post,
-    ): CancelablePromise<RoomServiceMenuResponse> {
+roomServiceId: string,
+formData: Body_upload_menu_api_v1_room_services__room_service_id__menu_post,
+): CancelablePromise<RoomServiceMenuResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/room/services/{room_service_id}/menu',
@@ -65,15 +65,15 @@ export class RoomServicesMenuService {
     /**
      * Update Menu By Id
      * Update menu by id. Applicable for Administrative accounts
-     * @param menuId
-     * @param requestBody
+     * @param menuId 
+     * @param requestBody 
      * @returns RoomServiceMenuResponse Successful Response
      * @throws ApiError
      */
     public static updateMenuByIdApiV1RoomServicesRoomServiceIdMenuMenuIdPut(
-        menuId: string,
-        requestBody: RoomServiceMenuUpdateRequest,
-    ): CancelablePromise<RoomServiceMenuResponse> {
+menuId: string,
+requestBody: RoomServiceMenuUpdateRequest,
+): CancelablePromise<RoomServiceMenuResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/room/services/{room_service_id}/menu/{menu_id}',
@@ -91,13 +91,13 @@ export class RoomServicesMenuService {
     /**
      * Delete Menu By Id
      * Delete menu by id. Applicable for Administrative accounts
-     * @param menuId
+     * @param menuId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteMenuByIdApiV1RoomServicesRoomServiceIdMenuMenuIdDelete(
-        menuId: string,
-    ): CancelablePromise<StatusResponse> {
+menuId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/room/services/{room_service_id}/menu/{menu_id}',
@@ -113,13 +113,13 @@ export class RoomServicesMenuService {
     /**
      * Get Menu Items By Menu Id
      * Get menu items by menu id. Applicable for Administrative accounts
-     * @param menuId
+     * @param menuId 
      * @returns RoomServiceMenuItemResponse Successful Response
      * @throws ApiError
      */
     public static getMenuItemsByMenuIdApiV1RoomServicesRoomServiceIdMenuMenuIdItemsGet(
-        menuId: string,
-    ): CancelablePromise<Array<RoomServiceMenuItemResponse>> {
+menuId: string,
+): CancelablePromise<Array<RoomServiceMenuItemResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/room/services/{room_service_id}/menu/{menu_id}/items',
@@ -135,20 +135,20 @@ export class RoomServicesMenuService {
     /**
      * Update Menu Item By Id
      * Update menu item by item id. Applicable for Administrative accounts
-     * @param menuItemId
-     * @param requestBody
-     * @returns RoomServiceMenuResponse Successful Response
+     * @param itemId 
+     * @param requestBody 
+     * @returns RoomServiceMenuItemResponse Successful Response
      * @throws ApiError
      */
     public static updateMenuItemByIdApiV1RoomServicesRoomServiceIdMenuMenuIdItemsItemIdPut(
-        menuItemId: string,
-        requestBody: RoomServiceMenuItemUpdateRequest,
-    ): CancelablePromise<RoomServiceMenuResponse> {
+itemId: string,
+requestBody: RoomServiceMenuItemUpdateRequest,
+): CancelablePromise<RoomServiceMenuItemResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/room/services/{room_service_id}/menu/{menu_id}/items/{item_id}',
-            query: {
-                'menu_item_id': menuItemId,
+            path: {
+                'item_id': itemId,
             },
             body: requestBody,
             mediaType: 'application/json',
@@ -161,18 +161,18 @@ export class RoomServicesMenuService {
     /**
      * Delete Menu Item By Id
      * Delete menu item by id. Applicable for Administrative accounts
-     * @param menuItemId
+     * @param itemId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteMenuItemByIdApiV1RoomServicesRoomServiceIdMenuMenuIdItemsItemIdDelete(
-        menuItemId: string,
-    ): CancelablePromise<StatusResponse> {
+itemId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/room/services/{room_service_id}/menu/{menu_id}/items/{item_id}',
-            query: {
-                'menu__item_id': menuItemId,
+            path: {
+                'item_id': itemId,
             },
             errors: {
                 422: `Validation Error`,

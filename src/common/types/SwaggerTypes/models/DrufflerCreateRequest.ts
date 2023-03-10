@@ -5,4 +5,3 @@
 export type DrufflerCreateRequest = {
     username: string;
 };
-

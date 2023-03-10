@@ -9,4 +9,3 @@ export type UserInfoResponse = {
     last_name?: string;
     birthday?: string;
 };
-

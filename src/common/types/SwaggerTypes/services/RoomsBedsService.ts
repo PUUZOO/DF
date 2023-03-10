@@ -28,13 +28,13 @@ export class RoomsBedsService {
     /**
      * Create Bed
      * Create new bed for rooms. Applicable only for Druffler user
-     * @param requestBody
+     * @param requestBody 
      * @returns RoomBedsResponse Successful Response
      * @throws ApiError
      */
     public static createBedApiV1RoomsBedsPost(
-        requestBody: RoomBedsCreateRequest,
-    ): CancelablePromise<RoomBedsResponse> {
+requestBody: RoomBedsCreateRequest,
+): CancelablePromise<RoomBedsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rooms/beds',
@@ -49,13 +49,13 @@ export class RoomsBedsService {
     /**
      * Link Beds
      * Create Room-Bed link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static linkBedsApiV1RoomsBedsLinkPost(
-        requestBody: RoomBedsLinkRequest,
-    ): CancelablePromise<StatusResponse> {
+requestBody: RoomBedsLinkRequest,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rooms/beds/link',
@@ -70,13 +70,13 @@ export class RoomsBedsService {
     /**
      * Delete Beds Link
      * Delete Hotel-Benefit link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteBedsLinkApiV1RoomsBedsLinkDelete(
-        requestBody: RoomBedsLinkRequest,
-    ): CancelablePromise<StatusResponse> {
+requestBody: RoomBedsLinkRequest,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/rooms/beds/link',

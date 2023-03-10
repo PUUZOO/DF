@@ -6,4 +6,3 @@ export type PasswordIn = {
     username: string;
     password: string;
 };
-

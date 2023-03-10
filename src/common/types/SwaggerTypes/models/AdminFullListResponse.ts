@@ -8,4 +8,3 @@ export type AdminFullListResponse = {
     data: Array<AdminFullResponse>;
     count: number;
 };
-

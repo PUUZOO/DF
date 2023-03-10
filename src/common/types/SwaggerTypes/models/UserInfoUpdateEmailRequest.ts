@@ -5,4 +5,3 @@
 export type UserInfoUpdateEmailRequest = {
     email?: string;
 };
-
