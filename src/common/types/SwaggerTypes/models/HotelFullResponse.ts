@@ -9,6 +9,7 @@ import type { HotelContactsResponse } from './HotelContactsResponse';
 import type { HotelMessengersResponse } from './HotelMessengersResponse';
 import type { HotelPhotosResponse } from './HotelPhotosResponse';
 import type { HotelStateTypes } from './HotelStateTypes';
+import type { RoomServiceResponse } from './RoomServiceResponse';
 
 export type HotelFullResponse = {
     is_deleted?: boolean;
@@ -25,5 +26,5 @@ export type HotelFullResponse = {
     accommodation?: HotelAccommodations;
     contacts?: Array<HotelContactsResponse>;
     messengers?: HotelMessengersResponse;
+    room_services?: Array<RoomServiceResponse>;
 };
-

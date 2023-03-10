@@ -8,4 +8,3 @@ export type OrderPrice = {
     voucher_value: number;
     total_value: number;
 };
-

@@ -29,13 +29,13 @@ export class RoomsBenefitsService {
     /**
      * Create Benefits
      * Create new room benefits. Applicable only for Druffler user
-     * @param requestBody
+     * @param requestBody 
      * @returns RoomBenefitsResponse Successful Response
      * @throws ApiError
      */
     public static createBenefitsApiV1RoomsBenefitsPost(
-        requestBody: RoomBenefitsCreateRequest,
-    ): CancelablePromise<RoomBenefitsResponse> {
+requestBody: RoomBenefitsCreateRequest,
+): CancelablePromise<RoomBenefitsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rooms/benefits',
@@ -50,13 +50,13 @@ export class RoomsBenefitsService {
     /**
      * Link Benefits
      * Create Room-Benefit link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static linkBenefitsApiV1RoomsBenefitsLinkPost(
-        requestBody: RoomBenefitsLink,
-    ): CancelablePromise<StatusResponse> {
+requestBody: RoomBenefitsLink,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rooms/benefits/link',
@@ -71,13 +71,13 @@ export class RoomsBenefitsService {
     /**
      * Delete Benefits Link
      * Delete Room-Benefit link. Applicable only for Administrative user only
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteBenefitsLinkApiV1RoomsBenefitsUnlinkPost(
-        requestBody: RoomBenefitsLink,
-    ): CancelablePromise<StatusResponse> {
+requestBody: RoomBenefitsLink,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rooms/benefits/unlink',
@@ -105,15 +105,15 @@ export class RoomsBenefitsService {
     /**
      * Update Benefits
      * Update room benefit by benefit_id. Applicable only for Druffler user
-     * @param benefitId
-     * @param requestBody
+     * @param benefitId 
+     * @param requestBody 
      * @returns RoomBenefitsResponse Successful Response
      * @throws ApiError
      */
     public static updateBenefitsApiV1RoomsBenefitsBenefitIdPut(
-        benefitId: string,
-        requestBody: RoomBenefitsUpdateRequest,
-    ): CancelablePromise<RoomBenefitsResponse> {
+benefitId: string,
+requestBody: RoomBenefitsUpdateRequest,
+): CancelablePromise<RoomBenefitsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/rooms/benefits/{benefit_id}',

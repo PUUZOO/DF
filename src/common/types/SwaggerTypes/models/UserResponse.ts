@@ -10,4 +10,3 @@ export type UserResponse = {
     created_at: string;
     updated_at: string;
 };
-

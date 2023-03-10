@@ -14,4 +14,3 @@ export type HotelResponse = {
     code?: string;
     id: string;
 };
-

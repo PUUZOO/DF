@@ -25,4 +25,3 @@ export type HotelAccommodations = {
     cash_payment?: boolean;
     card_payment?: boolean;
 };
-

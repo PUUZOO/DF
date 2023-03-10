@@ -16,4 +16,3 @@ export type RoomsCreateRequest = {
     guest_amount: number;
     hotel_id: string;
 };
-

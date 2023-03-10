@@ -19,13 +19,13 @@ export class HotelsService {
     /**
      * Get Hotel By Code
      * Get hotel by code. Public Api
-     * @param code
+     * @param code 
      * @returns HotelResponse Successful Response
      * @throws ApiError
      */
     public static getHotelByCodeApiV1HotelsCodeCodeGet(
-        code: string,
-    ): CancelablePromise<HotelResponse> {
+code: string,
+): CancelablePromise<HotelResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/code/{code}',
@@ -41,13 +41,13 @@ export class HotelsService {
     /**
      * Get Hotel By Code
      * Get hotel by code. Public Api
-     * @param code
+     * @param code 
      * @returns HotelFullResponse Successful Response
      * @throws ApiError
      */
     public static getHotelByCodeApiV1HotelsCodeCodeFullGet(
-        code: string,
-    ): CancelablePromise<HotelFullResponse> {
+code: string,
+): CancelablePromise<HotelFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/code/{code}/full',
@@ -63,13 +63,13 @@ export class HotelsService {
     /**
      * Get Hotel By Id
      * Get hotel by id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelResponse Successful Response
      * @throws ApiError
      */
     public static getHotelByIdApiV1HotelsHotelIdGet(
-        hotelId: string,
-    ): CancelablePromise<HotelResponse> {
+hotelId: string,
+): CancelablePromise<HotelResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}',
@@ -85,15 +85,15 @@ export class HotelsService {
     /**
      * Update Hotel By Id
      * Update hotel by id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelResponse Successful Response
      * @throws ApiError
      */
     public static updateHotelByIdApiV1HotelsHotelIdPut(
-        hotelId: string,
-        requestBody: HotelUpdateRequest,
-    ): CancelablePromise<HotelResponse> {
+hotelId: string,
+requestBody: HotelUpdateRequest,
+): CancelablePromise<HotelResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/{hotel_id}',
@@ -111,13 +111,13 @@ export class HotelsService {
     /**
      * Delete Hotel By Id
      * Delete hotel by id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelResponse Successful Response
      * @throws ApiError
      */
     public static deleteHotelByIdApiV1HotelsHotelIdDelete(
-        hotelId: string,
-    ): CancelablePromise<HotelResponse> {
+hotelId: string,
+): CancelablePromise<HotelResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/hotels/{hotel_id}',
@@ -133,13 +133,13 @@ export class HotelsService {
     /**
      * Get Hotel By Id
      * Get hotel by id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelFullResponse Successful Response
      * @throws ApiError
      */
     public static getHotelByIdApiV1HotelsHotelIdFullGet(
-        hotelId: string,
-    ): CancelablePromise<HotelFullResponse> {
+hotelId: string,
+): CancelablePromise<HotelFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/full',
@@ -155,13 +155,13 @@ export class HotelsService {
     /**
      * Get All Room Services By Hotel By Id
      * Get all room services by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns RoomServiceResponse Successful Response
      * @throws ApiError
      */
     public static getAllRoomServicesByHotelByIdApiV1HotelsHotelIdRoomServicesGet(
-        hotelId: string,
-    ): CancelablePromise<Array<RoomServiceResponse>> {
+hotelId: string,
+): CancelablePromise<Array<RoomServiceResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/room/services',
@@ -177,13 +177,13 @@ export class HotelsService {
     /**
      * Get All Room Services By Hotel By Id
      * Get all room services by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns RoomServiceFullResponse Successful Response
      * @throws ApiError
      */
     public static getAllRoomServicesByHotelByIdApiV1HotelsHotelIdRoomServicesFullGet(
-        hotelId: string,
-    ): CancelablePromise<Array<RoomServiceFullResponse>> {
+hotelId: string,
+): CancelablePromise<Array<RoomServiceFullResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/room/services/full',
@@ -199,13 +199,13 @@ export class HotelsService {
     /**
      * Get All Rooms By Hotel By Id
      * Get all room services by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns RoomsFullResponse Successful Response
      * @throws ApiError
      */
     public static getAllRoomsByHotelByIdApiV1HotelsHotelIdRoomsGet(
-        hotelId: string,
-    ): CancelablePromise<Array<RoomsFullResponse>> {
+hotelId: string,
+): CancelablePromise<Array<RoomsFullResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/rooms',
@@ -221,13 +221,13 @@ export class HotelsService {
     /**
      * Get All Rooms By Hotel By Id
      * Get all room services by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns RoomsFullResponse Successful Response
      * @throws ApiError
      */
     public static getAllRoomsByHotelByIdApiV1HotelsHotelIdRoomsFullGet(
-        hotelId: string,
-    ): CancelablePromise<Array<RoomsFullResponse>> {
+hotelId: string,
+): CancelablePromise<Array<RoomsFullResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/rooms/full',
@@ -243,17 +243,17 @@ export class HotelsService {
     /**
      * Get Admins By Hotel By Id
      * Get all admins by hotel id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param skip
-     * @param limit
+     * @param hotelId 
+     * @param skip 
+     * @param limit 
      * @returns AdminListResponse Successful Response
      * @throws ApiError
      */
     public static getAdminsByHotelByIdApiV1HotelsHotelIdAdminsGet(
-        hotelId: string,
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<Array<AdminListResponse>> {
+hotelId: string,
+skip?: number,
+limit: number = 50,
+): CancelablePromise<Array<AdminListResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/admins',
@@ -273,13 +273,13 @@ export class HotelsService {
     /**
      * Get Benefits By Hotel Id
      * Get hotel benefits by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelBenefitsResponse Successful Response
      * @throws ApiError
      */
     public static getBenefitsByHotelIdApiV1HotelsHotelIdBenefitsGet(
-        hotelId: string,
-    ): CancelablePromise<Array<HotelBenefitsResponse>> {
+hotelId: string,
+): CancelablePromise<Array<HotelBenefitsResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/benefits',

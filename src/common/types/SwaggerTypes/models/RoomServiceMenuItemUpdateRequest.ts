@@ -12,4 +12,3 @@ export type RoomServiceMenuItemUpdateRequest = {
     duration?: string;
     is_active: boolean;
 };
-

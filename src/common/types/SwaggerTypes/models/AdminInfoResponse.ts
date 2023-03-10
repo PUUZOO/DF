@@ -10,4 +10,3 @@ export type AdminInfoResponse = {
     description?: string;
     birthday?: string;
 };
-

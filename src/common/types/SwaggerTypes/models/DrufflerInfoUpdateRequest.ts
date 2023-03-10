@@ -11,4 +11,3 @@ export type DrufflerInfoUpdateRequest = {
     description?: string;
     birthday?: string;
 };
-

@@ -28,13 +28,13 @@ export class RoomServicesService {
     /**
      * Create Room Service
      * Create new room_service. Applicable for Administrative account
-     * @param requestBody
+     * @param requestBody 
      * @returns RoomServiceResponse Successful Response
      * @throws ApiError
      */
     public static createRoomServiceApiV1RoomServicesPost(
-        requestBody: RoomServiceCreateRequest,
-    ): CancelablePromise<RoomServiceResponse> {
+requestBody: RoomServiceCreateRequest,
+): CancelablePromise<RoomServiceResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/room/services',
@@ -48,14 +48,14 @@ export class RoomServicesService {
 
     /**
      * Get Room Service By Id
-     * Get room_service by id. Applicable for Administrative accounts
-     * @param roomServiceId
+     * Get room_service by id. Applicable Public
+     * @param roomServiceId 
      * @returns RoomServiceResponse Successful Response
      * @throws ApiError
      */
     public static getRoomServiceByIdApiV1RoomServicesRoomServiceIdGet(
-        roomServiceId: string,
-    ): CancelablePromise<RoomServiceResponse> {
+roomServiceId: string,
+): CancelablePromise<RoomServiceResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/room/services/{room_service_id}',
@@ -71,15 +71,15 @@ export class RoomServicesService {
     /**
      * Update Room Service By Id
      * Update room_service by id. Applicable for Administrative accounts
-     * @param roomServiceId
-     * @param requestBody
+     * @param roomServiceId 
+     * @param requestBody 
      * @returns RoomServiceResponse Successful Response
      * @throws ApiError
      */
     public static updateRoomServiceByIdApiV1RoomServicesRoomServiceIdPut(
-        roomServiceId: string,
-        requestBody: RoomServiceUpdateRequest,
-    ): CancelablePromise<RoomServiceResponse> {
+roomServiceId: string,
+requestBody: RoomServiceUpdateRequest,
+): CancelablePromise<RoomServiceResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/room/services/{room_service_id}',
@@ -97,13 +97,13 @@ export class RoomServicesService {
     /**
      * Delete Room Service By Id
      * Delete room_service by id. Applicable for Administrative accounts
-     * @param roomServiceId
+     * @param roomServiceId 
      * @returns RoomServiceResponse Successful Response
      * @throws ApiError
      */
     public static deleteRoomServiceByIdApiV1RoomServicesRoomServiceIdDelete(
-        roomServiceId: string,
-    ): CancelablePromise<RoomServiceResponse> {
+roomServiceId: string,
+): CancelablePromise<RoomServiceResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/room/services/{room_service_id}',
@@ -118,14 +118,14 @@ export class RoomServicesService {
 
     /**
      * Get Room Service By Id
-     * Get room_service by id. Applicable for Administrative accounts
-     * @param roomServiceId
+     * Get room_service by id. Applicable Public
+     * @param roomServiceId 
      * @returns RoomServiceFullResponse Successful Response
      * @throws ApiError
      */
     public static getRoomServiceByIdApiV1RoomServicesRoomServiceIdFullGet(
-        roomServiceId: string,
-    ): CancelablePromise<RoomServiceFullResponse> {
+roomServiceId: string,
+): CancelablePromise<RoomServiceFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/room/services/{room_service_id}/full',

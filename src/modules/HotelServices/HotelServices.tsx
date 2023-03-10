@@ -6,6 +6,7 @@ import HotelPreview from "./components/HotelPreview";
 import RoomServicesList from "./components/RoomServicesList";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { RoomsList } from "./components/Rooms";
 
 const HotelServices = () => {
   const { id: hotelId, roomServices } = useHotel();
@@ -41,7 +42,7 @@ const HotelServices = () => {
         <>
           <div className='col-lg-7 col-xl-8'>
             {type === "services" && <RoomServicesList />}
-            {type === "rooms" && <div>test</div>}
+            {type === "rooms" && <RoomsList />}
           </div>
 
           <div className='col-lg-5 col-xl-4 pt-11 pt-lg-0'>

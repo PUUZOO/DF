@@ -29,15 +29,15 @@ export class OrdersAdminApiService {
     /**
      * Create Order By Hotel Id
      * Create order. Applicable only for admin
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static createOrderByHotelIdApiV1OrdersHotelIdPost(
-        hotelId: string,
-        requestBody: OrderCreateRequest,
-    ): CancelablePromise<OrderFullResponse> {
+hotelId: string,
+requestBody: OrderCreateRequest,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/orders/{hotel_id}',
@@ -55,14 +55,14 @@ export class OrdersAdminApiService {
     /**
      * Get All Active Orders By Hotel Id
      * Get all active orders (new, in-progress and completed, declined today)
-     * Applicable only for users
-     * @param hotelId
+ * Applicable only for users
+     * @param hotelId 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static getAllActiveOrdersByHotelIdApiV1OrdersHotelIdActiveGet(
-        hotelId: string,
-    ): CancelablePromise<Array<OrderFullResponse>> {
+hotelId: string,
+): CancelablePromise<Array<OrderFullResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/{hotel_id}/active',
@@ -78,13 +78,13 @@ export class OrdersAdminApiService {
     /**
      * Get Order Details By Id
      * Get order by id. Applicable only for admin
-     * @param orderId
+     * @param orderId 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static getOrderDetailsByIdApiV1OrdersOrderIdGet(
-        orderId: string,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/{order_id}',
@@ -100,13 +100,13 @@ export class OrdersAdminApiService {
     /**
      * Take Order By Id
      * Take order by id. Applicable only for admin
-     * @param orderId
+     * @param orderId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static takeOrderByIdApiV1OrdersOrderIdTakeGet(
-        orderId: string,
-    ): CancelablePromise<StatusResponse> {
+orderId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/orders/{order_id}/take',
@@ -122,15 +122,15 @@ export class OrdersAdminApiService {
     /**
      * Edit Order By Id
      * Edit order by id. Applicable only for admin
-     * @param orderId
-     * @param requestBody
+     * @param orderId 
+     * @param requestBody 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static editOrderByIdApiV1OrdersOrderIdEditPut(
-        orderId: string,
-        requestBody: OrderUpdateRequest,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+requestBody: OrderUpdateRequest,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/orders/{order_id}/edit',
@@ -148,13 +148,13 @@ export class OrdersAdminApiService {
     /**
      * Complete Order By Id
      * Complete order by id. Applicable only for admin
-     * @param orderId
+     * @param orderId 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static completeOrderByIdApiV1OrdersOrderIdCompletePut(
-        orderId: string,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/orders/{order_id}/complete',
@@ -170,15 +170,15 @@ export class OrdersAdminApiService {
     /**
      * Decline Order By Id
      * Decline order by id. Applicable only for admin
-     * @param orderId
-     * @param requestBody
+     * @param orderId 
+     * @param requestBody 
      * @returns OrderFullResponse Successful Response
      * @throws ApiError
      */
     public static declineOrderByIdApiV1OrdersOrderIdDeclinePut(
-        orderId: string,
-        requestBody: OrderDeclineRequest,
-    ): CancelablePromise<OrderFullResponse> {
+orderId: string,
+requestBody: OrderDeclineRequest,
+): CancelablePromise<OrderFullResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/orders/{order_id}/decline',

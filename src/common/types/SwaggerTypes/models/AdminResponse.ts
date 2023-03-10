@@ -14,4 +14,3 @@ export type AdminResponse = {
     created_at: string;
     updated_at: string;
 };
-

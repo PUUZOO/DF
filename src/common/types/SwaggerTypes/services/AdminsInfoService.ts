@@ -13,13 +13,13 @@ export class AdminsInfoService {
     /**
      * Get Info
      * Get admin info by id. Applicable only for Admin and Druffler user only
-     * @param adminId
+     * @param adminId 
      * @returns AdminInfoResponse Successful Response
      * @throws ApiError
      */
     public static getInfoApiV1AdminsAdminIdInfoGet(
-        adminId: string,
-    ): CancelablePromise<AdminInfoResponse> {
+adminId: string,
+): CancelablePromise<AdminInfoResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins/{admin_id}/info',
@@ -35,15 +35,15 @@ export class AdminsInfoService {
     /**
      * Update Admin Info By Admin Id
      * Update admin info by admin id. Applicable only for Admin and Druffler user only
-     * @param adminId
-     * @param requestBody
+     * @param adminId 
+     * @param requestBody 
      * @returns AdminInfoResponse Successful Response
      * @throws ApiError
      */
     public static updateAdminInfoByAdminIdApiV1AdminsAdminIdInfoPut(
-        adminId: string,
-        requestBody: AdminInfoUpdateRequest,
-    ): CancelablePromise<AdminInfoResponse> {
+adminId: string,
+requestBody: AdminInfoUpdateRequest,
+): CancelablePromise<AdminInfoResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/admins/{admin_id}/info',

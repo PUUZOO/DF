@@ -14,4 +14,3 @@ export type RoomServiceResponse = {
     hotel_id: string;
     id: string;
 };
-

@@ -8,4 +8,3 @@ export type RoomBedsResponse = {
     is_active?: boolean;
     id: string;
 };
-

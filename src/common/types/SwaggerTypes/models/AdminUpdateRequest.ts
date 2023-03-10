@@ -11,4 +11,3 @@ export type AdminUpdateRequest = {
     info: AdminInfoUpdateRequest;
     hotel_id?: string;
 };
-

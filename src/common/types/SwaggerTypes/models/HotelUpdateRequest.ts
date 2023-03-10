@@ -10,4 +10,3 @@ export type HotelUpdateRequest = {
     state?: HotelStateTypes;
     is_active?: boolean;
 };
-

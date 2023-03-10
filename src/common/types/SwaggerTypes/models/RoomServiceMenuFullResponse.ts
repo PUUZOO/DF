@@ -10,6 +10,6 @@ export type RoomServiceMenuFullResponse = {
     description?: string;
     is_active: boolean;
     room_service_id: string;
+    id: string;
     items?: Array<RoomServiceMenuItemResponse>;
 };
-

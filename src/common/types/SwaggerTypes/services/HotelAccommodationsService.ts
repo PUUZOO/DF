@@ -13,13 +13,13 @@ export class HotelAccommodationsService {
     /**
      * Get Accommodations By Hotel Id
      * Get accommodations by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelAccommodationsResponse Successful Response
      * @throws ApiError
      */
     public static getAccommodationsByHotelIdApiV1HotelsHotelIdAccommodationsGet(
-        hotelId: string,
-    ): CancelablePromise<HotelAccommodationsResponse> {
+hotelId: string,
+): CancelablePromise<HotelAccommodationsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/accommodations',
@@ -35,15 +35,15 @@ export class HotelAccommodationsService {
     /**
      * Update Accommodations By Hotel Id
      * Get accommodations by hotel id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelAccommodationsResponse Successful Response
      * @throws ApiError
      */
     public static updateAccommodationsByHotelIdApiV1HotelsHotelIdAccommodationsPut(
-        hotelId: string,
-        requestBody: HotelAccommodationsUpdateRequest,
-    ): CancelablePromise<HotelAccommodationsResponse> {
+hotelId: string,
+requestBody: HotelAccommodationsUpdateRequest,
+): CancelablePromise<HotelAccommodationsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/{hotel_id}/accommodations',
@@ -61,15 +61,15 @@ export class HotelAccommodationsService {
     /**
      * Create Accommodations
      * Create new hotel accommodations. Applicable for Administrative account
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelAccommodationsResponse Successful Response
      * @throws ApiError
      */
     public static createAccommodationsApiV1HotelsHotelIdAccommodationsPost(
-        hotelId: string,
-        requestBody: HotelAccommodationsUpdateRequest,
-    ): CancelablePromise<HotelAccommodationsResponse> {
+hotelId: string,
+requestBody: HotelAccommodationsUpdateRequest,
+): CancelablePromise<HotelAccommodationsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/{hotel_id}/accommodations',

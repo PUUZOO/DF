@@ -8,4 +8,3 @@ export type HotelListResponse = {
     data?: Array<HotelResponse>;
     count: number;
 };
-

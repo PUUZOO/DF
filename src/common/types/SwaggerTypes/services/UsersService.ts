@@ -32,13 +32,13 @@ export class UsersService {
     /**
      * Get User By Id
      * Get user by id. Applicable only for Druffler user only
-     * @param userId
+     * @param userId 
      * @returns UserFullResponse Successful Response
      * @throws ApiError
      */
     public static getUserByIdApiV1UsersUserIdGet(
-        userId: string,
-    ): CancelablePromise<UserFullResponse> {
+userId: string,
+): CancelablePromise<UserFullResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/users/{user_id}',
@@ -54,13 +54,13 @@ export class UsersService {
     /**
      * Delete User By Id
      * Delete admin. Set admin is_deleted=True. Applicable only Druffler user
-     * @param userId
+     * @param userId 
      * @returns UserResponse Successful Response
      * @throws ApiError
      */
     public static deleteUserByIdApiV1UsersUserIdDelete(
-        userId: string,
-    ): CancelablePromise<UserResponse> {
+userId: string,
+): CancelablePromise<UserResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/users/{user_id}',
@@ -76,13 +76,13 @@ export class UsersService {
     /**
      * Update User By Me
      * Update users name. Applicable only for User
-     * @param requestBody
+     * @param requestBody 
      * @returns UserFullResponse Successful Response
      * @throws ApiError
      */
     public static updateUserByMeApiV1UsersPut(
-        requestBody: UserInfoUpdateRequest,
-    ): CancelablePromise<UserFullResponse> {
+requestBody: UserInfoUpdateRequest,
+): CancelablePromise<UserFullResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/users',
@@ -97,13 +97,13 @@ export class UsersService {
     /**
      * Login User
      * Login to user account.
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static loginUserApiV1UsersLoginPost(
-        requestBody: PasswordIn,
-    ): CancelablePromise<JwtToken> {
+requestBody: PasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/users/login',
@@ -118,13 +118,13 @@ export class UsersService {
     /**
      * Signup User
      * User signup. Applicable only for users
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static signupUserApiV1UsersSignupPost(
-        requestBody: UserCreateRequest,
-    ): CancelablePromise<StatusResponse> {
+requestBody: UserCreateRequest,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/users/signup',
@@ -139,13 +139,13 @@ export class UsersService {
     /**
      * Set User Email
      * Set email and sent verification email. Applicable only for User
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static setUserEmailApiV1UsersEmailPost(
-        requestBody: UserInfoUpdateEmailRequest,
-    ): CancelablePromise<StatusResponse> {
+requestBody: UserInfoUpdateEmailRequest,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/users/email',
@@ -173,13 +173,13 @@ export class UsersService {
     /**
      * Activate User By Id
      * Activate admin. Applicable only for Druffler user only
-     * @param userId
+     * @param userId 
      * @returns UserResponse Successful Response
      * @throws ApiError
      */
     public static activateUserByIdApiV1UsersUserIdActivateGet(
-        userId: string,
-    ): CancelablePromise<UserResponse> {
+userId: string,
+): CancelablePromise<UserResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/users/{user_id}/activate',
@@ -195,13 +195,13 @@ export class UsersService {
     /**
      * Deactivate User By Id
      * Deactivate user. Applicable only for Druffler user only
-     * @param userId
+     * @param userId 
      * @returns UserResponse Successful Response
      * @throws ApiError
      */
     public static deactivateUserByIdApiV1UsersUserIdDeactivateGet(
-        userId: string,
-    ): CancelablePromise<UserResponse> {
+userId: string,
+): CancelablePromise<UserResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/users/{user_id}/deactivate',

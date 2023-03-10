@@ -17,4 +17,3 @@ export type RoomsResponse = {
     hotel_id: string;
     id: string;
 };
-

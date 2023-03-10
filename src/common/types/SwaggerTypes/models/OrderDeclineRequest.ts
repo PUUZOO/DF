@@ -5,4 +5,3 @@
 export type OrderDeclineRequest = {
     administration_comment?: string;
 };
-

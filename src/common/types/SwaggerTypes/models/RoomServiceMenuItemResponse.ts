@@ -15,4 +15,3 @@ export type RoomServiceMenuItemResponse = {
     menu_id: string;
     id: string;
 };
-

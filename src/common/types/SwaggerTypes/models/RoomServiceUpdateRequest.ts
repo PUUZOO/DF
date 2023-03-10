@@ -8,4 +8,3 @@ export type RoomServiceUpdateRequest = {
     price?: string;
     is_active: boolean;
 };
-

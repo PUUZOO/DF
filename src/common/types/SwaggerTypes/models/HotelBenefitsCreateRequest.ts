@@ -9,4 +9,3 @@ export type HotelBenefitsCreateRequest = {
     is_popular?: boolean;
     is_active?: boolean;
 };
-

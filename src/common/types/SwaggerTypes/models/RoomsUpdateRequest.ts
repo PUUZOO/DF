@@ -15,4 +15,3 @@ export type RoomsUpdateRequest = {
     pet_deposit: string;
     guest_amount: number;
 };
-

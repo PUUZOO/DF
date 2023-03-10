@@ -12,4 +12,3 @@ export type RoomServiceCreateRequest = {
     service_type: RoomServicesTypes;
     hotel_id: string;
 };
-

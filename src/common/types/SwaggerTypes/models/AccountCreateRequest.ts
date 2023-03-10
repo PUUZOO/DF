@@ -10,4 +10,3 @@ export type AccountCreateRequest = {
     is_active?: boolean;
     agreement?: string;
 };
-

@@ -20,15 +20,15 @@ export class AdminsService {
     /**
      * Get All Admins
      * Get all admins. Applicable only for Admin user only
-     * @param skip
-     * @param limit
+     * @param skip 
+     * @param limit 
      * @returns AdminListResponse Successful Response
      * @throws ApiError
      */
     public static getAllAdminsApiV1AdminsGet(
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<AdminListResponse> {
+skip?: number,
+limit: number = 50,
+): CancelablePromise<AdminListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins',
@@ -45,13 +45,13 @@ export class AdminsService {
     /**
      * Set Pwd
      * Set password for administrator through guest token.
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static setPwdApiV1AdminsPwdPost(
-        requestBody: NewPasswordIn,
-    ): CancelablePromise<JwtToken> {
+requestBody: NewPasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/admins/pwd',
@@ -66,15 +66,15 @@ export class AdminsService {
     /**
      * Change Admin Pwd
      * Change admin pwd form. Applicable only for Admin and Druffler user only
-     * @param adminId
-     * @param requestBody
+     * @param adminId 
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static changeAdminPwdApiV1AdminsAdminIdPwdPut(
-        adminId: string,
-        requestBody: ChangePasswordIn,
-    ): CancelablePromise<JwtToken> {
+adminId: string,
+requestBody: ChangePasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/admins/{admin_id}/pwd',
@@ -92,13 +92,13 @@ export class AdminsService {
     /**
      * Reset Admin Pwd
      * Send email with guest token to change pwd. Public Link
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static resetAdminPwdApiV1AdminsPwdResetGet(
-        requestBody: UsernameIn,
-    ): CancelablePromise<StatusResponse> {
+requestBody: UsernameIn,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins/pwd/reset',
@@ -113,13 +113,13 @@ export class AdminsService {
     /**
      * Login Admin
      * Login to administrator account.
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static loginAdminApiV1AdminsLoginPost(
-        requestBody: PasswordIn,
-    ): CancelablePromise<JwtToken> {
+requestBody: PasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/admins/login',
@@ -147,13 +147,13 @@ export class AdminsService {
     /**
      * Get Admin By Id
      * Get admin by id. Applicable only for Admin and Druffler user only
-     * @param adminId
+     * @param adminId 
      * @returns AdminResponse Successful Response
      * @throws ApiError
      */
     public static getAdminByIdApiV1AdminsAdminIdGet(
-        adminId: string,
-    ): CancelablePromise<AdminResponse> {
+adminId: string,
+): CancelablePromise<AdminResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins/{admin_id}',
@@ -169,13 +169,13 @@ export class AdminsService {
     /**
      * Delete Admin By Id
      * Delete admin. Set admin is_deleted=True. Applicable only for Admin and Druffler user only
-     * @param adminId
+     * @param adminId 
      * @returns AdminResponse Successful Response
      * @throws ApiError
      */
     public static deleteAdminByIdApiV1AdminsAdminIdDelete(
-        adminId: string,
-    ): CancelablePromise<AdminResponse> {
+adminId: string,
+): CancelablePromise<AdminResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/admins/{admin_id}',
@@ -191,13 +191,13 @@ export class AdminsService {
     /**
      * Activate Admin By Id
      * Activate admin. Applicable only for Admin and Druffler user only
-     * @param adminId
+     * @param adminId 
      * @returns AdminResponse Successful Response
      * @throws ApiError
      */
     public static activateAdminByIdApiV1AdminsAdminIdActivateGet(
-        adminId: string,
-    ): CancelablePromise<AdminResponse> {
+adminId: string,
+): CancelablePromise<AdminResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins/{admin_id}/activate',
@@ -213,13 +213,13 @@ export class AdminsService {
     /**
      * Deactivate Admin By Id
      * Deactivate admin. Applicable only for Admin and Druffler user only
-     * @param adminId
+     * @param adminId 
      * @returns AdminResponse Successful Response
      * @throws ApiError
      */
     public static deactivateAdminByIdApiV1AdminsAdminIdDeactivateGet(
-        adminId: string,
-    ): CancelablePromise<AdminResponse> {
+adminId: string,
+): CancelablePromise<AdminResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/admins/{admin_id}/deactivate',

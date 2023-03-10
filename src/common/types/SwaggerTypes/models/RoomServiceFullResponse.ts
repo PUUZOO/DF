@@ -16,4 +16,3 @@ export type RoomServiceFullResponse = {
     id: string;
     menu?: Array<RoomServiceMenuFullResponse>;
 };
-

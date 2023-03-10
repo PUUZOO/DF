@@ -14,13 +14,13 @@ export class TokenService {
 
     /**
      * Refresh
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static refreshApiV1TokenRefreshPost(
-        requestBody: RefreshToken,
-    ): CancelablePromise<JwtToken> {
+requestBody: RefreshToken,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/token/refresh',
@@ -34,13 +34,13 @@ export class TokenService {
 
     /**
      * Revoke All
-     * @param requestBody
+     * @param requestBody 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static revokeAllApiV1TokenRevokePost(
-        requestBody: RefreshToken,
-    ): CancelablePromise<StatusResponse> {
+requestBody: RefreshToken,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/token/revoke',
@@ -55,13 +55,13 @@ export class TokenService {
     /**
      * Administrative Exchange
      * Login to administrator or druffler account.
-     * @param requestBody
+     * @param requestBody 
      * @returns JwtToken Successful Response
      * @throws ApiError
      */
     public static administrativeExchangeApiV1TokenAdministrativeExchangePost(
-        requestBody: PasswordIn,
-    ): CancelablePromise<JwtToken> {
+requestBody: PasswordIn,
+): CancelablePromise<JwtToken> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/token/administrative/exchange',

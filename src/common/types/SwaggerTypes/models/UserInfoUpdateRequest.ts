@@ -7,4 +7,3 @@ export type UserInfoUpdateRequest = {
     last_name?: string;
     birthday?: string;
 };
-

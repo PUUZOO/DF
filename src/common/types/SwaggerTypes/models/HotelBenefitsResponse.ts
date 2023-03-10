@@ -10,4 +10,3 @@ export type HotelBenefitsResponse = {
     is_active?: boolean;
     id: string;
 };
-

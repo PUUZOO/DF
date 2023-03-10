@@ -9,4 +9,3 @@ export type OrderItemsCreateRequest = {
     room_upgrade_id?: string;
     amount: number;
 };
-

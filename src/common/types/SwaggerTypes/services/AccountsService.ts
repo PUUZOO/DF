@@ -24,15 +24,15 @@ export class AccountsService {
     /**
      * Get All Accounts
      * Get all accounts. Applicable only for Druffler user only
-     * @param skip
-     * @param limit
+     * @param skip 
+     * @param limit 
      * @returns AccountsListResponse Successful Response
      * @throws ApiError
      */
     public static getAllAccountsApiV1AccountsGet(
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<AccountsListResponse> {
+skip?: number,
+limit: number = 50,
+): CancelablePromise<AccountsListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts',
@@ -49,13 +49,13 @@ export class AccountsService {
     /**
      * Create Account
      * Create new account. Applicable only for Druffler user only
-     * @param requestBody
+     * @param requestBody 
      * @returns AccountResponse Successful Response
      * @throws ApiError
      */
     public static createAccountApiV1AccountsPost(
-        requestBody: AccountCreateRequest,
-    ): CancelablePromise<AccountResponse> {
+requestBody: AccountCreateRequest,
+): CancelablePromise<AccountResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/accounts',
@@ -70,13 +70,13 @@ export class AccountsService {
     /**
      * Get Accounts By Id
      * Update account info. Applicable only for Administrative user only
-     * @param accountId
+     * @param accountId 
      * @returns AccountResponse Successful Response
      * @throws ApiError
      */
     public static getAccountsByIdApiV1AccountsAccountIdGet(
-        accountId: string,
-    ): CancelablePromise<AccountResponse> {
+accountId: string,
+): CancelablePromise<AccountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts/{account_id}',
@@ -92,15 +92,15 @@ export class AccountsService {
     /**
      * Update Accounts
      * Update account info. Applicable only for Administrative user only
-     * @param accountId
-     * @param requestBody
+     * @param accountId 
+     * @param requestBody 
      * @returns AccountResponse Successful Response
      * @throws ApiError
      */
     public static updateAccountsApiV1AccountsAccountIdPut(
-        accountId: string,
-        requestBody: AccountUpdateRequest,
-    ): CancelablePromise<AccountResponse> {
+accountId: string,
+requestBody: AccountUpdateRequest,
+): CancelablePromise<AccountResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/accounts/{account_id}',
@@ -118,13 +118,13 @@ export class AccountsService {
     /**
      * Delete Account By Id
      * Delete account by id. Applicable for Druffler accounts
-     * @param accountId
+     * @param accountId 
      * @returns StatusResponse Successful Response
      * @throws ApiError
      */
     public static deleteAccountByIdApiV1AccountsAccountIdDelete(
-        accountId: string,
-    ): CancelablePromise<StatusResponse> {
+accountId: string,
+): CancelablePromise<StatusResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/accounts/{account_id}',
@@ -140,17 +140,17 @@ export class AccountsService {
     /**
      * Get All Admins By Account Id
      * Get all admins. Applicable only for Druffler user only
-     * @param accountId
-     * @param skip
-     * @param limit
+     * @param accountId 
+     * @param skip 
+     * @param limit 
      * @returns AdminListResponse Successful Response
      * @throws ApiError
      */
     public static getAllAdminsByAccountIdApiV1AccountsAccountIdAdminsGet(
-        accountId: string,
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<AdminListResponse> {
+accountId: string,
+skip?: number,
+limit: number = 50,
+): CancelablePromise<AdminListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts/{account_id}/admins',
@@ -170,15 +170,15 @@ export class AccountsService {
     /**
      * Create Admin
      * Create new administrator. Applicable only for Druffler user
-     * @param accountId
-     * @param requestBody
+     * @param accountId 
+     * @param requestBody 
      * @returns AdminFullResponse Successful Response
      * @throws ApiError
      */
     public static createAdminApiV1AccountsAccountIdAdminsPost(
-        accountId: string,
-        requestBody: AdminUpdateRequest,
-    ): CancelablePromise<AdminFullResponse> {
+accountId: string,
+requestBody: AdminUpdateRequest,
+): CancelablePromise<AdminFullResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/accounts/{account_id}/admins',
@@ -196,17 +196,17 @@ export class AccountsService {
     /**
      * Get All Admins By Account Id
      * Get all admins. Applicable only for Druffler user only
-     * @param accountId
-     * @param skip
-     * @param limit
+     * @param accountId 
+     * @param skip 
+     * @param limit 
      * @returns AdminFullListResponse Successful Response
      * @throws ApiError
      */
     public static getAllAdminsByAccountIdApiV1AccountsAccountIdAdminsFullGet(
-        accountId: string,
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<AdminFullListResponse> {
+accountId: string,
+skip?: number,
+limit: number = 50,
+): CancelablePromise<AdminFullListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts/{account_id}/admins/full',
@@ -226,17 +226,17 @@ export class AccountsService {
     /**
      * Get All Hotels By Account Id
      * Get all hotels. Applicable only for Druffler user only
-     * @param accountId
-     * @param skip
-     * @param limit
+     * @param accountId 
+     * @param skip 
+     * @param limit 
      * @returns HotelListResponse Successful Response
      * @throws ApiError
      */
     public static getAllHotelsByAccountIdApiV1AccountsAccountIdHotelsGet(
-        accountId: string,
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<HotelListResponse> {
+accountId: string,
+skip?: number,
+limit: number = 50,
+): CancelablePromise<HotelListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts/{account_id}/hotels',
@@ -256,15 +256,15 @@ export class AccountsService {
     /**
      * Create Hotel
      * Create new hotel. Applicable for Administrative account
-     * @param accountId
-     * @param requestBody
+     * @param accountId 
+     * @param requestBody 
      * @returns HotelResponse Successful Response
      * @throws ApiError
      */
     public static createHotelApiV1AccountsAccountIdHotelsPost(
-        accountId: string,
-        requestBody: HotelUpdateRequest,
-    ): CancelablePromise<HotelResponse> {
+accountId: string,
+requestBody: HotelUpdateRequest,
+): CancelablePromise<HotelResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/accounts/{account_id}/hotels',
@@ -282,17 +282,17 @@ export class AccountsService {
     /**
      * Get All Hotels By Account Id
      * Get all hotels. Applicable only for Druffler user only
-     * @param accountId
-     * @param skip
-     * @param limit
+     * @param accountId 
+     * @param skip 
+     * @param limit 
      * @returns HotelFullListResponse Successful Response
      * @throws ApiError
      */
     public static getAllHotelsByAccountIdApiV1AccountsAccountIdHotelsFullGet(
-        accountId: string,
-        skip?: number,
-        limit: number = 50,
-    ): CancelablePromise<HotelFullListResponse> {
+accountId: string,
+skip?: number,
+limit: number = 50,
+): CancelablePromise<HotelFullListResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/accounts/{account_id}/hotels/full',

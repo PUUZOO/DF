@@ -9,4 +9,3 @@ export type HotelPhotosResponse = {
     hotel_id: string;
     id: string;
 };
-

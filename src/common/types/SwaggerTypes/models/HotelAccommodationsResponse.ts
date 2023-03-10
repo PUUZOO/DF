@@ -20,4 +20,3 @@ export type HotelAccommodationsResponse = {
     hotel_id: string;
     id: string;
 };
-

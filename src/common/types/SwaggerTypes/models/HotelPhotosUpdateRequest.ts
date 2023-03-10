@@ -5,4 +5,3 @@
 export type HotelPhotosUpdateRequest = {
     is_active: boolean;
 };
-

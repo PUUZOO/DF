@@ -12,4 +12,3 @@ export type HotelContactsUpdateRequest = {
     phone: string;
     custom_name?: string;
 };
-

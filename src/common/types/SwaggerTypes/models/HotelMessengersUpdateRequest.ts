@@ -6,4 +6,3 @@ export type HotelMessengersUpdateRequest = {
     telegram?: boolean;
     whatsup?: boolean;
 };
-

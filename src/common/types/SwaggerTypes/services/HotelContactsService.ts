@@ -13,13 +13,13 @@ export class HotelContactsService {
     /**
      * Get Contacts By Hotel Id
      * Get contacts by hotel id. Applicable for Administrative accounts
-     * @param hotelId
+     * @param hotelId 
      * @returns HotelContactsResponse Successful Response
      * @throws ApiError
      */
     public static getContactsByHotelIdApiV1HotelsHotelIdContactsGet(
-        hotelId: string,
-    ): CancelablePromise<Array<HotelContactsResponse>> {
+hotelId: string,
+): CancelablePromise<Array<HotelContactsResponse>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/hotels/{hotel_id}/contacts',
@@ -35,15 +35,15 @@ export class HotelContactsService {
     /**
      * Update Contacts By Hotel Id
      * Get contacts by hotel id. Applicable for Administrative accounts
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelContactsResponse Successful Response
      * @throws ApiError
      */
     public static updateContactsByHotelIdApiV1HotelsHotelIdContactsPut(
-        hotelId: string,
-        requestBody: HotelContactsUpdateRequest,
-    ): CancelablePromise<HotelContactsResponse> {
+hotelId: string,
+requestBody: HotelContactsUpdateRequest,
+): CancelablePromise<HotelContactsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/v1/hotels/{hotel_id}/contacts',
@@ -61,15 +61,15 @@ export class HotelContactsService {
     /**
      * Create Contacts
      * Create new hotel contacts. Applicable for Administrative account
-     * @param hotelId
-     * @param requestBody
+     * @param hotelId 
+     * @param requestBody 
      * @returns HotelContactsResponse Successful Response
      * @throws ApiError
      */
     public static createContactsApiV1HotelsHotelIdContactsPost(
-        hotelId: string,
-        requestBody: HotelContactsUpdateRequest,
-    ): CancelablePromise<HotelContactsResponse> {
+hotelId: string,
+requestBody: HotelContactsUpdateRequest,
+): CancelablePromise<HotelContactsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/hotels/{hotel_id}/contacts',

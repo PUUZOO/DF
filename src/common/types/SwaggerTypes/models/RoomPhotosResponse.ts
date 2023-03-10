@@ -9,4 +9,3 @@ export type RoomPhotosResponse = {
     room_id: string;
     id: string;
 };
-

@@ -15,5 +15,6 @@ export type AdminFullResponse = {
     created_at: string;
     updated_at: string;
     info: AdminInfoResponse;
+    account_id: string;
+    hotel_id?: string;
 };
-
